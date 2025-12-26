@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>n8n Workflow Automation Services</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0f8ac6", // Slightly darker blue for better contrast on white
+              "background-light": "#ffffff",
+              "background-alt": "#f8fafc", // Slate-50
+            },
+            fontFamily: {
+              display: ["Space Grotesk", "sans-serif"],
+              body: ["Noto Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(226, 232, 240, 0.8);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      }
+      .text-gradient {
+        background: linear-gradient(to right, #0f172a, #0f8ac6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f5f9;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light text-slate-900 font-display overflow-x-hidden selection:bg-primary/20"
+  >
+    <section
+      class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 bg-white overflow-hidden"
+    >
+      <div
+        class="absolute top-0 right-0 -z-10 h-[600px] w-[600px] rounded-full bg-blue-50 blur-[100px] opacity-60"
+      ></div>
+      <div
+        class="absolute bottom-0 left-0 -z-10 h-[400px] w-[400px] rounded-full bg-slate-50 blur-[80px]"
+      ></div>
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
+          <div class="flex flex-col gap-6">
+            <div
+              class="inline-flex w-fit items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-medium text-primary"
+            >
+              <span class="material-symbols-outlined text-sm"
+                >verified_user</span
+              >
+              Enterprise Grade Security
+            </div>
+            <h1
+              class="text-4xl font-bold leading-tight tracking-tight text-slate-900 lg:text-6xl"
+            >
+              Total Automation Control on
+              <span class="text-primary">Your Own Servers</span>.
+            </h1>
+            <p class="text-lg text-slate-600 max-w-xl">
+              Break free from SaaS limits. Experience true data sovereignty and
+              unlimited workflow executions without the per-task fees.
+            </p>
+            <div class="mt-4 grid gap-4 sm:grid-cols-2">
+              <div
+                class="glass-panel p-5 rounded-xl border-l-4 border-l-primary"
+              >
+                <span
+                  class="material-symbols-outlined mb-2 text-primary text-3xl"
+                  >savings</span
+                >
+                <h3 class="font-bold text-slate-900">No Per-Task Fees</h3>
+                <p class="text-sm text-slate-500 mt-1">
+                  Unlimited workflows, flat server cost. Scale without penalty.
+                </p>
+              </div>
+              <div
+                class="glass-panel p-5 rounded-xl border-l-4 border-l-slate-400"
+              >
+                <span
+                  class="material-symbols-outlined mb-2 text-slate-700 text-3xl"
+                  >shield_lock</span
+                >
+                <h3 class="font-bold text-slate-900">100% Data Sovereignty</h3>
+                <p class="text-sm text-slate-500 mt-1">
+                  Your data stays behind your firewall. Maximum security.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-4 pt-4">
+              <button
+                class="flex h-12 items-center justify-center rounded-lg bg-primary px-6 text-base font-bold text-white shadow-xl shadow-blue-500/20 hover:bg-primary/90 transition-all"
+              >
+                Get a Custom Quote
+              </button>
+            </div>
+          </div>
+          <div
+            class="relative h-[400px] lg:h-[600px] w-full rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 shadow-2xl shadow-slate-200/50"
+          >
+            <div
+              class="absolute inset-0 bg-cover bg-center"
+              data-alt="Isometric view of a glowing blue server rack in a dark room representing private cloud infrastructure"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDycLPprIvfrJ3JlegeIzNi6wfn7oKUJaBNXn9yhk6GGs4FU2uFln884v2QQ1qXIwNotvBoKDEB0qDiZjPo2LInO0dxKC-waezw0RcMFmuHLtTksqVmPx2GKpRhHsim5wu45Yfa-lYBOztZmf7eZRrYFUzNtv2l9dw3ZprgtbLhDkQm37F3JeSzPsIlGwFXrG3A7l8NKoNLr-nIdLMh3HL8NzwXPr2Khl_HgIzwPv4oNOWrXDtKcBBX96wsqowbLwC6CGIG7vHdVp_0');
+              "
+            ></div>
+            <div
+              class="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur border border-white/20 p-6 rounded-xl shadow-xl"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="h-2 w-2 rounded-full bg-green-500 animate-pulse"
+                  ></div>
+                  <span class="text-sm font-mono text-slate-800 font-bold"
+                    >System Status: Operational</span
+                  >
+                </div>
+                <span class="text-xs text-slate-400 font-mono"
+                  >ID: N8N-PRO-01</span
+                >
+              </div>
+              <div class="mt-3 h-1 w-full rounded-full bg-slate-100">
+                <div class="h-1 w-3/4 rounded-full bg-primary"></div>
+              </div>
+              <div
+                class="mt-2 flex justify-between text-xs text-slate-500 font-mono"
+              >
+                <span>Throughput</span>
+                <span>14.5k ops/sec</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="py-20 bg-background-alt relative overflow-hidden"
+      id="engineering"
+    >
+      <div
+        class="absolute left-0 top-1/2 -translate-y-1/2 -z-10 h-[500px] w-[500px] rounded-full bg-white blur-[100px]"
+      ></div>
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row-reverse gap-16 items-center">
+          <div class="flex-1 space-y-8">
+            <h2
+              class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl"
+            >
+              Connect Anything to <span class="text-primary">Everything</span>.
+            </h2>
+            <p class="text-lg text-slate-600">
+              We don't just use standard nodes. We build custom integrations for
+              your specific tech stack.
+            </p>
+            <div class="space-y-6">
+              <div
+                class="flex gap-4 p-4 rounded-xl hover:bg-white hover:shadow-sm transition-all border border-transparent hover:border-slate-100"
+              >
+                <div class="flex-none pt-1">
+                  <div
+                    class="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100 text-primary"
+                  >
+                    <span class="material-symbols-outlined">api</span>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="font-bold text-slate-900 text-lg">
+                    Custom Nodes for Your Stack
+                  </h3>
+                  <p class="text-slate-500 mt-2">
+                    Seamlessly integrate private APIs, legacy on-prem systems,
+                    and internal databases that standard tools can't touch.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex gap-4 p-4 rounded-xl hover:bg-white hover:shadow-sm transition-all border border-transparent hover:border-slate-100"
+              >
+                <div class="flex-none pt-1">
+                  <div
+                    class="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100 text-primary"
+                  >
+                    <span class="material-symbols-outlined">code_blocks</span>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="font-bold text-slate-900 text-lg">
+                    Complex Logic Made Simple
+                  </h3>
+                  <p class="text-slate-500 mt-2">
+                    Move beyond simple triggers. We engineer multi-step
+                    workflows with advanced error handling, retry logic, and
+                    custom JavaScript.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- <button
+              class="flex items-center gap-2 text-primary font-bold hover:text-slate-800 transition-colors pl-4"
+            >
+              Explore Integration Library
+              <span class="material-symbols-outlined text-sm"
+                >arrow_forward</span
+              >
+            </button> -->
+          </div>
+          <div class="flex-1 w-full relative">
+            <div class="relative w-full aspect-square max-w-md mx-auto">
+              <div
+                class="absolute inset-0 bg-cover bg-center rounded-2xl shadow-2xl border border-slate-200"
+                data-alt="3D abstract render of colorful geometric shapes connecting into a central glowing mechanical gear structure"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuArPaYhmLE6oQ7R06BSDVMnyccWHo4qsYBm3buscxY7txP29lcZZHancq7AIxou2Uqtlmg2jrPtwyUz4NZU2f1E3hh-I5-znPdihZARAB1I4NjipqiAIPCCh0eR7n2WEl_xG8WzCh6HBnnDgqvknHUiHa9JZo4MPa0XwIl27_natUW4s4P2o1p9VUAfU1EVrVHWIOVOSA3w_G12Qn-mFRyPaa_1lcu5IG6kg4NcoIQ9StoiObNDPx0ycdJ8VRxRzEWhGjfhYKbvQBDS');
+                "
+              ></div>
+              <div
+                class="absolute -bottom-6 -right-6 bg-[#1e1e1e] p-5 rounded-lg shadow-2xl font-mono text-xs w-72 hidden sm:block border border-slate-800 transform rotate-1 hover:rotate-0 transition-transform"
+              >
+                <div class="flex gap-1.5 mb-3 border-b border-white/10 pb-3">
+                  <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+                </div>
+                <p class="text-blue-400">
+                  async function
+                  <span class="text-yellow-300">processData</span>() {
+                </p>
+                <p class="pl-4 text-purple-400">
+                  const <span class="text-white">payload</span> = await
+                  api.get();
+                </p>
+                <p class="pl-4 text-green-400">// Custom logic injection</p>
+                <p class="pl-4 text-white">return transform(payload);</p>
+                <p class="text-blue-400">}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-24 bg-white relative border-y border-slate-100">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2
+            class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl mb-4"
+          >
+            Replace Manual Work with
+            <span class="text-primary">Intelligent Flows</span>.
+          </h2>
+          <p class="text-lg text-slate-600">
+            Stop wasting talent on data entry. Deploy intelligent pipelines that
+            work 24/7.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 items-stretch">
+          <div
+            class="group relative overflow-hidden rounded-2xl bg-slate-50 border border-slate-200 p-8 hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity"
+            >
+              <span class="material-symbols-outlined text-9xl text-primary"
+                >precision_manufacturing</span
+              >
+            </div>
+            <div class="relative z-10">
+              <h3 class="text-2xl font-bold text-slate-900 mb-2">
+                Automate 80% of Repetitive Tasks
+              </h3>
+              <p class="text-slate-500 mb-6">
+                From syncing CRM data to generating complex financial reports,
+                our bots handle the grunt work.
+              </p>
+              <ul class="space-y-3">
+                <li class="flex items-center gap-3 text-sm text-slate-600">
+                  <span class="material-symbols-outlined text-green-500 text-lg"
+                    >check_circle</span
+                  >
+                  Zero data entry errors
+                </li>
+                <li class="flex items-center gap-3 text-sm text-slate-600">
+                  <span class="material-symbols-outlined text-green-500 text-lg"
+                    >check_circle</span
+                  >
+                  Instant processing speed
+                </li>
+                <li class="flex items-center gap-3 text-sm text-slate-600">
+                  <span class="material-symbols-outlined text-green-500 text-lg"
+                    >check_circle</span
+                  >
+                  24/7 availability
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="group relative overflow-hidden rounded-2xl bg-slate-50 border border-slate-200 p-8 hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity"
+            >
+              <span class="material-symbols-outlined text-9xl text-primary"
+                >rocket_launch</span
+              >
+            </div>
+            <div class="relative z-10">
+              <h3 class="text-2xl font-bold text-slate-900 mb-2">
+                Enterprise-Grade Scalability
+              </h3>
+              <p class="text-slate-500 mb-6">
+                Built on Docker and Kubernetes. Whether you run 10 workflows or
+                10 million, your infrastructure scales automatically.
+              </p>
+              <div
+                class="mt-8 bg-white rounded-lg p-4 border border-slate-200 shadow-sm"
+              >
+                <div class="flex justify-between items-end mb-2">
+                  <span
+                    class="text-xs text-slate-400 uppercase font-bold tracking-wider"
+                    >Workflow Volume</span
+                  >
+                  <span class="text-xs text-primary font-bold">+450% YOY</span>
+                </div>
+                <div class="flex items-end gap-1 h-24">
+                  <div class="w-full bg-blue-100 rounded-t-sm h-[20%]"></div>
+                  <div class="w-full bg-blue-200 rounded-t-sm h-[35%]"></div>
+                  <div class="w-full bg-blue-300 rounded-t-sm h-[45%]"></div>
+                  <div class="w-full bg-blue-400 rounded-t-sm h-[60%]"></div>
+                  <div class="w-full bg-blue-500 rounded-t-sm h-[85%]"></div>
+                  <div class="w-full bg-primary rounded-t-sm h-[100%]"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-16 bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden relative"
+        >
+          <div class="p-8 lg:p-10">
+            <div
+              class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4"
+            >
+              <div>
+                <h3 class="text-2xl font-bold text-slate-900">
+                  Calculate Your Automation ROI
+                </h3>
+                <p class="text-slate-500 text-sm mt-1">
+                  Estimate your monthly savings by switching to self-hosted n8n.
+                </p>
+              </div>
+              <div
+                class="hidden md:flex h-10 w-10 items-center justify-center rounded-full bg-blue-50 text-primary"
+              >
+                <span class="material-symbols-outlined">calculate</span>
+              </div>
+            </div>
+            <div
+              class="grid lg:grid-cols-12 gap-8 lg:gap-12 border-t border-slate-100 pt-8"
+            >
+              <div class="lg:col-span-7 space-y-8">
+                <div>
+                  <div class="flex justify-between items-center mb-3">
+                    <label class="text-sm font-bold text-slate-700"
+                      >Manual tasks per month</label
+                    >
+                    <div class="relative">
+                      <input
+                        class="block w-24 rounded-md border-0 py-1.5 pl-3 pr-8 text-right text-slate-900 ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 font-bold bg-slate-50"
+                        type="number"
+                        value="5000"
+                      />
+                      <div
+                        class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
+                      >
+                        <span class="text-xs text-slate-400">qty</span>
+                      </div>
+                    </div>
+                  </div>
+                  <input
+                    class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-primary"
+                    max="10000"
+                    min="0"
+                    type="range"
+                    value="5000"
+                  />
+                </div>
+                <div>
+                  <div class="flex justify-between items-center mb-3">
+                    <label class="text-sm font-bold text-slate-700"
+                      >Avg. time per task</label
+                    >
+                    <div class="relative">
+                      <input
+                        class="block w-24 rounded-md border-0 py-1.5 pl-3 pr-8 text-right text-slate-900 ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 font-bold bg-slate-50"
+                        type="number"
+                        value="10"
+                      />
+                      <div
+                        class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
+                      >
+                        <span class="text-xs text-slate-400">min</span>
+                      </div>
+                    </div>
+                  </div>
+                  <input
+                    class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-primary"
+                    max="60"
+                    min="1"
+                    type="range"
+                    value="10"
+                  />
+                </div>
+                <div>
+                  <div class="flex justify-between items-center mb-3">
+                    <label class="text-sm font-bold text-slate-700"
+                      >Staff hourly rate</label
+                    >
+                    <div class="relative">
+                      <div
+                        class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-2"
+                      >
+                        <span class="text-slate-500 sm:text-sm">$</span>
+                      </div>
+                      <input
+                        class="block w-24 rounded-md border-0 py-1.5 pl-6 pr-3 text-right text-slate-900 ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 font-bold bg-slate-50"
+                        type="number"
+                        value="45"
+                      />
+                    </div>
+                  </div>
+                  <input
+                    class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-primary"
+                    max="200"
+                    min="15"
+                    type="range"
+                    value="45"
+                  />
+                </div>
+                <button
+                  class="w-full bg-primary text-white font-bold py-3.5 px-4 rounded-lg shadow-lg shadow-blue-500/20 hover:bg-sky-600 transition-colors flex items-center justify-center gap-2 mt-2"
+                >
+                  Calculate Savings
+                </button>
+              </div>
+              <div
+                class="lg:col-span-5 bg-slate-900 rounded-xl p-6 text-white flex flex-col justify-between shadow-inner border border-slate-700"
+              >
+                <div class="space-y-6">
+                  <div>
+                    <div
+                      class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1"
+                    >
+                      Monthly Hours Saved
+                    </div>
+                    <div class="text-4xl font-bold text-white">
+                      833
+                      <span class="text-lg font-normal text-slate-500"
+                        >hrs</span
+                      >
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1"
+                    >
+                      Money Saved on Labor
+                    </div>
+                    <div class="text-4xl font-bold text-green-400">$37,500</div>
+                  </div>
+                </div>
+                <!-- <div class="mt-8 pt-6 border-t border-slate-800">
+                  <h4 class="text-sm font-bold mb-4 flex items-center gap-2">
+                    n8n Advantage
+                    <span
+                      class="text-[10px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded border border-green-500/30"
+                      >FLAT FEE</span
+                    >
+                  </h4>
+                  <div class="space-y-4">
+                    <div>
+                      <div class="flex justify-between text-xs mb-1.5">
+                        <span class="text-slate-400">SaaS (Zapier/Make)</span>
+                        <span class="text-slate-300 font-mono">~$1,200</span>
+                      </div>
+                      <div class="w-full h-2 bg-slate-800 rounded-full">
+                        <div
+                          class="h-full bg-slate-500 rounded-full"
+                          style="width: 100%"
+                        ></div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="flex justify-between text-xs mb-1.5">
+                        <span class="text-white font-bold"
+                          >Your n8n Server</span
+                        >
+                        <span class="text-primary font-bold font-mono"
+                          >$60</span
+                        >
+                      </div>
+                      <div class="w-full h-2 bg-slate-800 rounded-full">
+                        <div
+                          class="h-full bg-primary rounded-full shadow-[0_0_10px_rgba(14,165,233,0.6)]"
+                          style="width: 5%"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-24 relative overflow-hidden bg-slate-50" id="managed">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="order-2 lg:order-1 relative">
+            <div
+              class="rounded-xl bg-white border border-slate-200 p-2 shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500"
+            >
+              <div class="bg-[#0f172a] rounded-lg p-6 overflow-hidden relative">
+                <div
+                  class="flex items-center justify-between mb-8 border-b border-white/10 pb-4"
+                >
+                  <div class="flex gap-2">
+                    <div class="h-3 w-3 rounded-full bg-red-500"></div>
+                    <div class="h-3 w-3 rounded-full bg-yellow-500"></div>
+                    <div class="h-3 w-3 rounded-full bg-green-500"></div>
+                  </div>
+                  <div
+                    class="flex items-center gap-2 bg-green-500/10 px-3 py-1 rounded-full border border-green-500/20"
+                  >
+                    <div
+                      class="h-2 w-2 rounded-full bg-green-500 animate-pulse"
+                    ></div>
+                    <span class="text-xs text-green-400 font-bold"
+                      >SECURE &amp; MONITORED</span
+                    >
+                  </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div
+                    class="bg-slate-800/50 p-4 rounded-lg border border-slate-700"
+                  >
+                    <p class="text-xs text-slate-400 mb-1">Uptime (30d)</p>
+                    <p class="text-2xl font-bold text-white">99.99%</p>
+                  </div>
+                  <div
+                    class="bg-slate-800/50 p-4 rounded-lg border border-slate-700"
+                  >
+                    <p class="text-xs text-slate-400 mb-1">Active Workers</p>
+                    <p class="text-2xl font-bold text-primary">12 / 12</p>
+                  </div>
+                </div>
+                <div
+                  class="h-32 w-full bg-gradient-to-t from-primary/10 to-transparent rounded-lg border border-slate-700/50 relative flex items-end p-2 gap-1"
+                >
+                  <div class="w-1/12 h-[60%] bg-primary/40 rounded-sm"></div>
+                  <div class="w-1/12 h-[45%] bg-primary/40 rounded-sm"></div>
+                  <div class="w-1/12 h-[75%] bg-primary/40 rounded-sm"></div>
+                  <div class="w-1/12 h-[50%] bg-primary/40 rounded-sm"></div>
+                  <div class="w-1/12 h-[90%] bg-primary/40 rounded-sm"></div>
+                  <div class="w-1/12 h-[65%] bg-primary/40 rounded-sm"></div>
+                  <div class="w-1/12 h-[80%] bg-primary/40 rounded-sm"></div>
+                  <div class="w-1/12 h-[55%] bg-primary/40 rounded-sm"></div>
+                  <div class="w-1/12 h-[70%] bg-primary/40 rounded-sm"></div>
+                  <div class="w-1/12 h-[85%] bg-primary/40 rounded-sm"></div>
+                  <div class="w-1/12 h-[60%] bg-primary/40 rounded-sm"></div>
+                  <div
+                    class="w-1/12 h-[95%] bg-primary rounded-sm shadow-[0_0_10px_rgba(15,138,198,0.5)]"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="order-1 lg:order-2 space-y-8">
+            <h2
+              class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl"
+            >
+              We Deploy, <span class="text-primary">You Automate</span>.
+            </h2>
+            <p class="text-lg text-slate-600">
+              Focus on building workflows. We handle the dirty work of server
+              management, security, and uptime.
+            </p>
+            <div class="space-y-8">
+              <div class="relative pl-12">
+                <div
+                  class="absolute left-0 top-1 h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20 text-primary"
+                >
+                  <span class="material-symbols-outlined text-lg">dns</span>
+                </div>
+                <h3 class="font-bold text-slate-900 text-lg">
+                  Zero-Downtime Infrastructure
+                </h3>
+                <p class="text-slate-500 mt-1">
+                  Managed server setup including SSL configuration, load
+                  balancing, and automated daily backups.
+                </p>
+              </div>
+              <div class="relative pl-12">
+                <div
+                  class="absolute left-0 top-1 h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20 text-primary"
+                >
+                  <span class="material-symbols-outlined text-lg"
+                    >security_update_good</span
+                  >
+                </div>
+                <h3 class="font-bold text-slate-900 text-lg">
+                  Ongoing Maintenance &amp; Updates
+                </h3>
+                <p class="text-slate-500 mt-1">
+                  We handle n8n version updates, security patches, and provide
+                  24/7 monitoring to ensure your flows never stop.
+                </p>
+              </div>
+            </div>
+            <!-- <button
+              class="flex h-12 items-center justify-center rounded-lg bg-primary px-6 text-base font-bold text-white shadow-lg shadow-blue-500/20 hover:bg-primary/90 transition-all"
+            >
+              View Management Plans
+            </button> -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-24 bg-white relative" id="ai">
+      <div
+        class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03]"
+      ></div>
+      <div class="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
+        <div class="flex flex-col items-center text-center mb-16">
+          <div
+            class="inline-flex items-center gap-2 rounded-full border border-purple-200 bg-purple-50 px-4 py-1.5 text-xs font-bold text-purple-600 mb-6"
+          >
+            <span class="material-symbols-outlined text-sm">psychology</span>
+            NEXT GENERATION INTELLIGENCE
+          </div>
+          <h2
+            class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl max-w-3xl"
+          >
+            Supercharge Your Automation with
+            <span
+              class="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600"
+              >AI Agents</span
+            >.
+          </h2>
+          <p class="mt-6 text-lg text-slate-600 max-w-2xl">
+            Don't just move data. Understand it. We integrate LLMs like OpenAI,
+            Claude, and Gemini directly into your n8n pipelines.
+          </p>
+        </div>
+        <div class="grid lg:grid-cols-3 gap-8">
+          <div
+            class="lg:col-span-2 relative h-[400px] rounded-2xl overflow-hidden border border-slate-200 shadow-2xl shadow-purple-200/50 group"
+          >
+            <div
+              class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+              data-alt="Futuristic visualization of a digital brain connecting to glowing network nodes in a dark environment"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDwceiZtHcVfySzfF9bvmZ4YcKW1Ujub5Qu6ChOHxDhrPiIepLKEbtviC9t2ILUMQL0l8NaEq44o_otj86aX2hUZgmLmZN2Vkdmn3J_aMSvH-NfEOxXHyAK-5CYM5KZiqlbVeXfPN77Htday0mwN6KdQhkIlG8tx6E4yi9V4Sniowo7WhZReDqV7vD3znOxVIGEhlMSmgd5VeyZaZF30ibE8XNwfAQPU8VAyx-1MUM2DFQ-AZ8plHFuttxnDFvQ1kiAS27Ufazoznpc');
+              "
+            ></div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"
+            ></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <div class="flex gap-2 mb-4">
+                <span
+                  class="bg-white/10 backdrop-blur-md border border-white/20 px-3 py-1 rounded text-xs text-white font-medium"
+                  >GPT-4 Turbo</span
+                >
+                <span
+                  class="bg-white/10 backdrop-blur-md border border-white/20 px-3 py-1 rounded text-xs text-white font-medium"
+                  >Claude 3 Opus</span
+                >
+              </div>
+              <h3 class="text-2xl font-bold text-white">
+                Autonomous Decision Making
+              </h3>
+            </div>
+          </div>
+          <div class="flex flex-col justify-center gap-6">
+            <div
+              class="bg-white p-6 rounded-xl border border-slate-200 border-l-4 border-l-purple-500 shadow-sm hover:shadow-md transition-all"
+            >
+              <span
+                class="material-symbols-outlined text-purple-500 text-3xl mb-3"
+                >auto_awesome</span
+              >
+              <h3 class="font-bold text-slate-900 text-lg">
+                Autonomous AI Workflows
+              </h3>
+              <p class="text-slate-500 text-sm mt-2">
+                Summarize emails, categorize support tickets, and generate
+                content automatically using state-of-the-art LLMs.
+              </p>
+            </div>
+            <div
+              class="bg-white p-6 rounded-xl border border-slate-200 border-l-4 border-l-pink-500 shadow-sm hover:shadow-md transition-all"
+            >
+              <span
+                class="material-symbols-outlined text-pink-500 text-3xl mb-3"
+                >supervisor_account</span
+              >
+              <h3 class="font-bold text-slate-900 text-lg">
+                Human-in-the-Loop
+              </h3>
+              <p class="text-slate-500 text-sm mt-2">
+                AI does the heavy lifting, you provide the final sign-off.
+                Seamless approval flows via Slack or Email.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
