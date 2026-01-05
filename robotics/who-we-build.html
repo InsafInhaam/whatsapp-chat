@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Protomotion Engineering - Who We Help</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&amp;family=Space+Grotesk:wght@300..700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2b7cee",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+              "surface-dark": "#192433",
+              "border-dark": "#233348",
+            },
+            fontFamily: {
+              display: ["Space Grotesk", "sans-serif"],
+              body: ["Noto Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      /* Grid background pattern */
+      .bg-grid-pattern {
+        background-size: 40px 40px;
+        background-image: linear-gradient(
+            to right,
+            rgba(43, 124, 238, 0.03) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(43, 124, 238, 0.03) 1px,
+            transparent 1px
+          );
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white overflow-x-hidden"
+  >
+    <div class="relative flex min-h-screen w-full flex-col group/design-root">
+      <!-- Navbar -->
+      <header
+        class="sticky top-0 z-50 w-full border-b border-solid border-border-dark bg-[#111822]/90 backdrop-blur-md"
+      >
+        <div
+          class="layout-container flex h-full grow flex-col max-w-[1280px] mx-auto"
+        >
+          <div
+            class="px-4 md:px-10 flex items-center justify-between whitespace-nowrap py-3"
+          >
+            <div class="flex items-center gap-4 text-white">
+              <div class="size-8 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined !text-[32px]"
+                  >precision_manufacturing</span
+                >
+              </div>
+              <h2
+                class="text-white text-lg font-bold leading-tight tracking-[-0.015em]"
+              >
+                Protomotion
+              </h2>
+            </div>
+            <div class="hidden md:flex flex-1 justify-end gap-8">
+              <div class="flex items-center gap-9">
+                <a
+                  class="text-gray-300 hover:text-white text-sm font-medium leading-normal transition-colors"
+                  href="#"
+                  >Expertise</a
+                >
+                <a
+                  class="text-gray-300 hover:text-white text-sm font-medium leading-normal transition-colors"
+                  href="#"
+                  >Projects</a
+                >
+                <a
+                  class="text-white text-sm font-medium leading-normal border-b border-primary"
+                  href="#"
+                  >Who We Help</a
+                >
+                <a
+                  class="text-gray-300 hover:text-white text-sm font-medium leading-normal transition-colors"
+                  href="#"
+                  >Contact</a
+                >
+              </div>
+              <button
+                class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-primary/90 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em]"
+              >
+                <span class="truncate">Get in Touch</span>
+              </button>
+            </div>
+            <button class="md:hidden text-white">
+              <span class="material-symbols-outlined">menu</span>
+            </button>
+          </div>
+        </div>
+      </header>
+      <main class="flex-1 bg-grid-pattern relative">
+        <!-- Decorative gradient blur -->
+        <div
+          class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-primary/5 blur-[120px] rounded-full pointer-events-none"
+        ></div>
+        <div
+          class="layout-container flex h-full grow flex-col max-w-[960px] mx-auto px-4 md:px-10 py-12 md:py-20"
+        >
+          <!-- Section Header -->
+          <div class="flex flex-col gap-4 mb-12">
+            <div class="flex items-center gap-2">
+              <div class="h-[1px] w-8 bg-primary"></div>
+              <span
+                class="text-primary text-sm font-bold tracking-widest uppercase"
+                >Target Sectors</span
+              >
+            </div>
+            <h1
+              class="text-white tracking-tight text-3xl md:text-5xl font-bold leading-tight max-w-[720px]"
+            >
+              Engineering Partners <br />
+              <span class="text-gray-400">For Complex Innovation.</span>
+            </h1>
+            <p
+              class="text-gray-400 text-base md:text-lg font-normal leading-relaxed max-w-[640px] mt-2 font-body"
+            >
+              We specialize in high-complexity robotics and IoT solutions. We
+              don't just write code; we build the machines that run it.
+            </p>
+          </div>
+          <!-- Feature Grid (Target Clients) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
+            <!-- Card 1 -->
+            <div
+              class="group relative flex flex-col gap-4 rounded-xl border border-border-dark bg-surface-dark/50 p-6 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5 overflow-hidden"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
+              <div
+                class="text-primary relative z-10 flex h-12 w-12 items-center justify-center rounded-lg bg-surface-dark border border-border-dark group-hover:border-primary/30 transition-colors"
+              >
+                <span class="material-symbols-outlined">memory</span>
+              </div>
+              <div class="flex flex-col gap-2 relative z-10">
+                <h2 class="text-white text-xl font-bold leading-tight">
+                  Hardware Startups
+                </h2>
+                <p
+                  class="text-gray-400 text-sm font-normal leading-relaxed font-body"
+                >
+                  Rapid MVP prototyping for hardware-first ventures requiring
+                  custom PCB design, firmware, and mechanical integration.
+                </p>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div
+              class="group relative flex flex-col gap-4 rounded-xl border border-border-dark bg-surface-dark/50 p-6 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5 overflow-hidden"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
+              <div
+                class="text-primary relative z-10 flex h-12 w-12 items-center justify-center rounded-lg bg-surface-dark border border-border-dark group-hover:border-primary/30 transition-colors"
+              >
+                <span class="material-symbols-outlined">school</span>
+              </div>
+              <div class="flex flex-col gap-2 relative z-10">
+                <h2 class="text-white text-xl font-bold leading-tight">
+                  Academic Research
+                </h2>
+                <p
+                  class="text-gray-400 text-sm font-normal leading-relaxed font-body"
+                >
+                  Research-grade instrumentation and custom robotics platforms
+                  for universities and labs needing precise data acquisition.
+                </p>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div
+              class="group relative flex flex-col gap-4 rounded-xl border border-border-dark bg-surface-dark/50 p-6 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5 overflow-hidden"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
+              <div
+                class="text-primary relative z-10 flex h-12 w-12 items-center justify-center rounded-lg bg-surface-dark border border-border-dark group-hover:border-primary/30 transition-colors"
+              >
+                <span class="material-symbols-outlined">factory</span>
+              </div>
+              <div class="flex flex-col gap-2 relative z-10">
+                <h2 class="text-white text-xl font-bold leading-tight">
+                  Industrial Automation
+                </h2>
+                <p
+                  class="text-gray-400 text-sm font-normal leading-relaxed font-body"
+                >
+                  IoT retrofitting and custom automation systems for small
+                  factories looking to modernize legacy equipment without full
+                  replacement.
+                </p>
+              </div>
+            </div>
+            <!-- Card 4 -->
+            <div
+              class="group relative flex flex-col gap-4 rounded-xl border border-border-dark bg-surface-dark/50 p-6 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5 overflow-hidden"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
+              <div
+                class="text-primary relative z-10 flex h-12 w-12 items-center justify-center rounded-lg bg-surface-dark border border-border-dark group-hover:border-primary/30 transition-colors"
+              >
+                <span class="material-symbols-outlined">lightbulb</span>
+              </div>
+              <div class="flex flex-col gap-2 relative z-10">
+                <h2 class="text-white text-xl font-bold leading-tight">
+                  Product Innovators
+                </h2>
+                <p
+                  class="text-gray-400 text-sm font-normal leading-relaxed font-body"
+                >
+                  Turning napkin sketches into functional Proof of Concepts
+                  (POCs) for entrepreneurs validating market fit before mass
+                  production.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Action Panel (Who we are NOT for) -->
+          <div class="mb-20">
+            <div
+              class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 rounded-xl border border-red-500/20 bg-red-950/10 p-6 md:p-8 relative overflow-hidden"
+            >
+              <!-- Subtle warning strip -->
+              <div
+                class="absolute left-0 top-0 bottom-0 w-1 bg-red-500/50"
+              ></div>
+              <div class="flex flex-col gap-2 max-w-[600px] z-10">
+                <div class="flex items-center gap-2 mb-1">
+                  <span
+                    class="material-symbols-outlined text-red-400 text-[20px]"
+                    >block</span
+                  >
+                  <h3
+                    class="text-white text-base font-bold uppercase tracking-wider"
+                  >
+                    Out of Scope
+                  </h3>
+                </div>
+                <p
+                  class="text-gray-300 text-sm md:text-base font-normal leading-relaxed font-body"
+                >
+                  To maintain our engineering standards, we do
+                  <span class="text-white font-bold">NOT</span> accept projects
+                  for: Pure software/app development, general website design, or
+                  equity-only partnerships.
+                </p>
+              </div>
+              <a
+                class="group flex items-center gap-2 text-sm font-bold text-gray-400 hover:text-white transition-colors z-10 whitespace-nowrap"
+                href="#"
+              >
+                <span>Engagement Criteria</span>
+                <span
+                  class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform"
+                  >arrow_forward</span
+                >
+              </a>
+            </div>
+          </div>
+          <!-- CTA Section -->
+          <div
+            class="flex flex-col items-center justify-center text-center gap-6 py-12 border-t border-border-dark relative"
+          >
+            <div
+              class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-primary/20 blur-3xl rounded-full"
+            ></div>
+            <div class="flex flex-col gap-3 max-w-[600px]">
+              <h2 class="text-white text-3xl font-bold leading-tight">
+                Ready to build?
+              </h2>
+              <p
+                class="text-gray-400 text-base font-normal leading-normal font-body"
+              >
+                If you fit one of our partner profiles, let's turn your
+                specifications into reality.
+              </p>
+            </div>
+            <button
+              class="flex min-w-[200px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-primary/90 hover:scale-105 transition-all text-white text-base font-bold leading-normal tracking-[0.015em] shadow-[0_0_20px_rgba(43,124,238,0.3)]"
+            >
+              <span class="mr-2">Discuss Your Project</span>
+              <span class="material-symbols-outlined text-[20px]"
+                >rocket_launch</span
+              >
+            </button>
+          </div>
+        </div>
+      </main>
+      <!-- Footer Simple -->
+      <footer class="border-t border-border-dark bg-[#0f151e] py-8">
+        <div
+          class="layout-container flex flex-col md:flex-row justify-between items-center gap-4 max-w-[960px] mx-auto px-10"
+        >
+          <p class="text-gray-500 text-sm font-body">
+            © 2024 Protomotion Engineering. All rights reserved.
+          </p>
+          <div class="flex gap-6">
+            <a class="text-gray-500 hover:text-white transition-colors" href="#"
+              ><span class="material-symbols-outlined">mail</span></a
+            >
+            <a class="text-gray-500 hover:text-white transition-colors" href="#"
+              ><span class="material-symbols-outlined">public</span></a
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

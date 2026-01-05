@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>RoboTech Solutions - Contact</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Material Symbols -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Tailwind Configuration -->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2b7cee",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+            },
+            fontFamily: {
+              display: ["Space Grotesk", "sans-serif"],
+              body: ["Noto Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      /* Custom scrollbar for textarea */
+      textarea::-webkit-scrollbar {
+        width: 8px;
+      }
+      textarea::-webkit-scrollbar-track {
+        background: #1e293b;
+      }
+      textarea::-webkit-scrollbar-thumb {
+        background: #334155;
+        border-radius: 4px;
+      }
+      textarea::-webkit-scrollbar-thumb:hover {
+        background: #475569;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white min-h-screen flex flex-col overflow-x-hidden"
+  >
+    <!-- Top Navigation -->
+    <header
+      class="sticky top-0 z-50 w-full border-b border-[#233348] bg-background-dark/95 backdrop-blur-md"
+    >
+      <div class="max-w-[960px] mx-auto px-4 sm:px-10 py-3">
+        <div class="flex items-center justify-between h-12">
+          <!-- Logo -->
+          <div class="flex items-center gap-4 text-white">
+            <span
+              class="material-symbols-outlined text-3xl text-primary"
+              style="font-variation-settings: 'FILL' 1"
+              >smart_toy</span
+            >
+            <h2
+              class="text-white text-lg font-bold leading-tight tracking-[-0.015em]"
+            >
+              RoboTech Solutions
+            </h2>
+          </div>
+          <!-- Desktop Nav -->
+          <div class="flex flex-1 justify-end gap-8">
+            <nav class="hidden md:flex items-center gap-9">
+              <a
+                class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors"
+                href="#"
+                >Services</a
+              >
+              <a
+                class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors"
+                href="#"
+                >Case Studies</a
+              >
+              <a
+                class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors"
+                href="#"
+                >About Us</a
+              >
+              <a
+                class="text-white text-sm font-medium leading-normal text-primary"
+                href="#"
+                >Contact</a
+              >
+            </nav>
+            <!-- CTA Button -->
+            <button
+              class="hidden md:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-blue-600 text-white text-sm font-bold leading-normal tracking-[0.015em] transition-all"
+            >
+              <span class="truncate">Start a Project</span>
+            </button>
+          </div>
+          <!-- Mobile Menu Button (Visual Only) -->
+          <div class="md:hidden">
+            <button class="text-white hover:text-primary">
+              <span class="material-symbols-outlined">menu</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Main Content -->
+    <main
+      class="flex-grow flex flex-col items-center justify-start relative w-full"
+    >
+      <!-- Background Decor: Abstract Glows -->
+      <div
+        class="absolute inset-0 z-0 pointer-events-none overflow-hidden"
+        data-alt="Abstract blue gradient glow background for modern technical aesthetic"
+      >
+        <div
+          class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 rounded-full blur-[100px] opacity-50"
+        ></div>
+        <div
+          class="absolute bottom-0 right-0 w-[600px] h-[500px] bg-blue-900/10 rounded-full blur-[80px] opacity-20"
+        ></div>
+      </div>
+      <div
+        class="layout-container w-full px-4 sm:px-6 py-12 md:py-20 z-10 flex justify-center"
+      >
+        <div
+          class="layout-content-container flex flex-col max-w-[960px] flex-1"
+        >
+          <!-- Hero CTA Section -->
+          <div class="flex flex-col items-center text-center gap-6 mb-20 px-4">
+            <h1
+              class="text-white tracking-light text-[32px] md:text-[48px] font-black leading-tight tracking-[-0.033em] max-w-[720px]"
+            >
+              Have an Idea or Problem?
+            </h1>
+            <p
+              class="text-white text-base md:text-lg font-normal leading-normal max-w-[600px] text-slate-300"
+            >
+              Tell us what you want to build. We’ll tell you how to make it
+              real.
+            </p>
+            <div class="mt-4 flex justify-center w-full">
+              <button
+                class="flex min-w-[160px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary hover:bg-blue-600 text-white text-base font-bold leading-normal tracking-[0.015em] transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-0.5 gap-2"
+              >
+                <span>Start a Project</span>
+                <span class="material-symbols-outlined text-[20px]"
+                  >arrow_forward</span
+                >
+              </button>
+            </div>
+          </div>
+          <!-- Split Layout: Contact Details & Form -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            <!-- Left Column: Contact Methods -->
+            <div class="flex flex-col gap-6">
+              <div class="flex flex-col gap-2 mb-2">
+                <h2 class="text-white text-2xl font-bold leading-tight">
+                  Get in Touch
+                </h2>
+                <p class="text-[#92a9c9] text-base font-normal">
+                  Reach out through your preferred channel.
+                </p>
+              </div>
+              <!-- Contact Cards -->
+              <div class="flex flex-col gap-4">
+                <!-- Email -->
+                <div
+                  class="flex items-center gap-4 rounded-lg border border-[#324867] bg-[#192433] p-4 hover:border-primary/50 transition-colors group cursor-pointer"
+                >
+                  <div
+                    class="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary group-hover:scale-105 transition-transform"
+                  >
+                    <span class="material-symbols-outlined">mail</span>
+                  </div>
+                  <div class="flex flex-col gap-0.5">
+                    <h3 class="text-white text-base font-bold leading-tight">
+                      Email Us
+                    </h3>
+                    <p class="text-[#92a9c9] text-sm font-normal">
+                      hello@robotechio.com
+                    </p>
+                  </div>
+                  <span
+                    class="material-symbols-outlined ml-auto text-[#324867] group-hover:text-primary transition-colors"
+                    >arrow_outward</span
+                  >
+                </div>
+                <!-- WhatsApp -->
+                <div
+                  class="flex items-center gap-4 rounded-lg border border-[#324867] bg-[#192433] p-4 hover:border-green-500/50 transition-colors group cursor-pointer"
+                >
+                  <div
+                    class="flex items-center justify-center w-12 h-12 rounded-lg bg-green-500/10 text-green-500 group-hover:scale-105 transition-transform"
+                  >
+                    <span class="material-symbols-outlined">chat</span>
+                  </div>
+                  <div class="flex flex-col gap-0.5">
+                    <h3 class="text-white text-base font-bold leading-tight">
+                      WhatsApp
+                    </h3>
+                    <p class="text-[#92a9c9] text-sm font-normal">
+                      +1 (555) 012-3456
+                    </p>
+                  </div>
+                  <span
+                    class="material-symbols-outlined ml-auto text-[#324867] group-hover:text-green-500 transition-colors"
+                    >arrow_outward</span
+                  >
+                </div>
+                <!-- Instagram -->
+                <div
+                  class="flex items-center gap-4 rounded-lg border border-[#324867] bg-[#192433] p-4 hover:border-pink-500/50 transition-colors group cursor-pointer"
+                >
+                  <div
+                    class="flex items-center justify-center w-12 h-12 rounded-lg bg-pink-500/10 text-pink-500 group-hover:scale-105 transition-transform"
+                  >
+                    <span class="material-symbols-outlined">photo_camera</span>
+                  </div>
+                  <div class="flex flex-col gap-0.5">
+                    <h3 class="text-white text-base font-bold leading-tight">
+                      Instagram DM
+                    </h3>
+                    <p class="text-[#92a9c9] text-sm font-normal">
+                      @robotech_io
+                    </p>
+                  </div>
+                  <span
+                    class="material-symbols-outlined ml-auto text-[#324867] group-hover:text-pink-500 transition-colors"
+                    >arrow_outward</span
+                  >
+                </div>
+              </div>
+              <!-- Mini Map Visual -->
+              <div
+                class="relative w-full h-32 rounded-lg overflow-hidden border border-[#324867] mt-2 group"
+                data-alt="Abstract dotted grid pattern representing a technical map background"
+                data-location="San Francisco"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAuyglJclkameKmI4WlZqCXYqZo8xi7tb3-SXyJQ3lROF6OOo3k7yx2LVbjhEKtDwQ0s8_0ex7q0Jh1a-aGcOPy0tPvcu0f9yqJr75bBadHWaFti6uyj_ymDLtHaNetZYELhuojrstxXyeBTRWlBfHEOJg4hZ7fYuJoxGcEl4ESv0P2yR2h5U8lGBuSwqKEq6sdNHkwtJ5H8tKZy27s8n2JAO5AkPsYTSZUqb4yWfQPNthpo7pVSVnmIfBJ7hnNtWN3XlW7Dtk8Js');
+                "
+              >
+                <div
+                  class="absolute inset-0 bg-[#111822]"
+                  style="
+                    background-image: radial-gradient(
+                      #324867 1px,
+                      transparent 1px
+                    );
+                    background-size: 20px 20px;
+                    opacity: 0.5;
+                  "
+                ></div>
+                <div
+                  class="absolute inset-0 flex items-center justify-center gap-2"
+                >
+                  <span
+                    class="material-symbols-outlined text-primary animate-bounce"
+                    >location_on</span
+                  >
+                  <span
+                    class="text-xs font-mono text-[#92a9c9] uppercase tracking-widest"
+                    >San Francisco, CA</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Right Column: Form -->
+            <div
+              class="flex flex-col rounded-xl border border-[#324867] bg-[#192433]/80 p-6 md:p-8 shadow-2xl backdrop-blur-sm"
+            >
+              <div class="mb-6">
+                <h2 class="text-white text-2xl font-bold leading-tight mb-2">
+                  Send a Message
+                </h2>
+                <div class="h-1 w-12 bg-primary rounded-full"></div>
+              </div>
+              <form class="flex flex-col gap-4">
+                <!-- Name -->
+                <label class="flex flex-col w-full">
+                  <p class="text-white text-sm font-medium leading-normal pb-2">
+                    Your Name
+                  </p>
+                  <input
+                    class="form-input flex w-full resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border border-[#324867] bg-[#111822] focus:border-primary focus:bg-[#192433] h-14 placeholder:text-[#92a9c9] p-[15px] text-base font-normal leading-normal transition-all"
+                    placeholder="John Doe"
+                    value=""
+                  />
+                </label>
+                <!-- Email -->
+                <label class="flex flex-col w-full">
+                  <p class="text-white text-sm font-medium leading-normal pb-2">
+                    Email Address
+                  </p>
+                  <input
+                    class="form-input flex w-full resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border border-[#324867] bg-[#111822] focus:border-primary focus:bg-[#192433] h-14 placeholder:text-[#92a9c9] p-[15px] text-base font-normal leading-normal transition-all"
+                    placeholder="john@example.com"
+                    type="email"
+                    value=""
+                  />
+                </label>
+                <!-- Project Details -->
+                <label class="flex flex-col w-full">
+                  <p class="text-white text-sm font-medium leading-normal pb-2">
+                    Project Details
+                  </p>
+                  <textarea
+                    class="form-input flex w-full resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border border-[#324867] bg-[#111822] focus:border-primary focus:bg-[#192433] min-h-36 placeholder:text-[#92a9c9] p-[15px] text-base font-normal leading-normal transition-all"
+                    placeholder="Describe your idea or problem..."
+                  ></textarea>
+                </label>
+                <!-- Submit -->
+                <button
+                  class="mt-4 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-white hover:bg-slate-200 text-slate-900 text-base font-bold leading-normal tracking-[0.015em] transition-colors gap-2"
+                  type="button"
+                >
+                  <span>Send Message</span>
+                  <span class="material-symbols-outlined text-[18px]"
+                    >send</span
+                  >
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="border-t border-[#233348] py-8 bg-background-dark text-[#92a9c9] text-sm mt-auto"
+    >
+      <div
+        class="max-w-[960px] mx-auto px-10 flex flex-col md:flex-row items-center justify-between gap-4"
+      >
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-xl">smart_toy</span>
+          <span class="font-medium">© 2024 RoboTech Solutions.</span>
+        </div>
+        <div class="flex gap-6 font-medium">
+          <a class="hover:text-white transition-colors" href="#">Privacy</a>
+          <a class="hover:text-white transition-colors" href="#">Terms</a>
+          <a class="hover:text-white transition-colors" href="#">Support</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

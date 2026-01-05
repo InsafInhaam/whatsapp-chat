@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>RoboTech Engineering - What We Build</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2b7cee",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+              "surface-dark": "#192433",
+              "border-dark": "#324867",
+            },
+            fontFamily: {
+              display: ["Space Grotesk", "sans-serif"],
+              body: ["Noto Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Custom scrollbar for a more technical feel */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #101822;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #324867;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #2b7cee;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-x-hidden"
+  >
+    <!-- Navbar -->
+    <header
+      class="fixed top-0 z-50 w-full border-b border-solid border-slate-200 dark:border-[#233348] bg-background-light/80 dark:bg-[#111822]/90 backdrop-blur-md"
+    >
+      <div class="px-4 md:px-10 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-4 text-slate-900 dark:text-white">
+          <div class="size-8 text-primary">
+            <svg
+              class="w-full h-full"
+              fill="none"
+              viewbox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+              ></path>
+              <path
+                clip-rule="evenodd"
+                d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+              ></path>
+            </svg>
+          </div>
+          <h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">
+            RoboTech
+          </h2>
+        </div>
+        <nav class="hidden md:flex flex-1 justify-end gap-8 items-center">
+          <div class="flex items-center gap-9">
+            <a
+              class="text-slate-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium"
+              href="#"
+              >Capabilities</a
+            >
+            <a
+              class="text-slate-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium"
+              href="#"
+              >Portfolio</a
+            >
+            <a
+              class="text-slate-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium"
+              href="#"
+              >About</a
+            >
+          </div>
+          <button
+            class="cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary hover:bg-blue-600 transition-colors text-white text-sm font-bold tracking-[0.015em]"
+          >
+            Start Project
+          </button>
+        </nav>
+        <div class="md:hidden text-white">
+          <span class="material-symbols-outlined">menu</span>
+        </div>
+      </div>
+    </header>
+    <!-- Hero / Intro Area (Subtle Context) -->
+    <section
+      class="relative pt-32 pb-10 px-4 md:px-10 lg:px-40 flex flex-col items-center text-center"
+    >
+      <!-- Abstract Decoration -->
+      <div
+        class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none opacity-20"
+      >
+        <div
+          class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary rounded-full blur-[120px]"
+        ></div>
+        <div
+          class="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-blue-900 rounded-full blur-[100px]"
+        ></div>
+      </div>
+      <div class="max-w-4xl mx-auto flex flex-col items-center gap-6">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-mono uppercase tracking-wider"
+        >
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          Systems Online
+        </div>
+        <h1
+          class="text-4xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-white via-blue-100 to-slate-400 bg-clip-text text-transparent"
+        >
+          Engineered for Reality.
+        </h1>
+        <p class="text-slate-400 text-lg md:text-xl max-w-2xl font-body">
+          Advanced robotics and IoT solutions bridging the gap between digital
+          concepts and physical execution.
+        </p>
+      </div>
+    </section>
+    <!-- Main Feature Section (What We Build) -->
+    <section class="py-16 px-4 md:px-10 lg:px-40 w-full relative">
+      <div class="max-w-[1200px] mx-auto flex flex-col gap-12">
+        <!-- Section Header -->
+        <div
+          class="flex flex-col md:flex-row gap-8 justify-between items-end border-b border-border-dark pb-8"
+        >
+          <div class="flex flex-col gap-4 max-w-2xl">
+            <h2
+              class="text-3xl md:text-4xl font-bold text-white tracking-tight flex items-center gap-3"
+            >
+              <span class="material-symbols-outlined text-primary text-4xl"
+                >precision_manufacturing</span
+              >
+              What We Build
+            </h2>
+            <p class="text-slate-400 text-base font-body leading-relaxed">
+              We don’t sell ideas. We deliver working systems. Our engineering
+              focuses on precision, reliability, and scalability for industrial
+              and commercial applications.
+            </p>
+          </div>
+          <div class="flex-shrink-0">
+            <button
+              class="group flex items-center gap-2 text-primary hover:text-white transition-colors text-sm font-bold uppercase tracking-wider"
+            >
+              View Full Portfolio
+              <span
+                class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform"
+                >arrow_forward</span
+              >
+            </button>
+          </div>
+        </div>
+        <!-- Grid Content -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1: Custom Robotics -->
+          <div
+            class="group relative flex flex-col gap-4 rounded-xl border border-border-dark bg-surface-dark p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(43,124,238,0.15)] hover:-translate-y-1"
+          >
+            <div class="flex items-start justify-between">
+              <div
+                class="p-3 rounded-lg bg-background-dark border border-border-dark group-hover:border-primary/30 group-hover:bg-primary/10 transition-colors"
+              >
+                <span class="material-symbols-outlined text-primary text-3xl"
+                  >smart_toy</span
+                >
+              </div>
+              <span
+                class="text-border-dark group-hover:text-primary/40 font-mono text-sm font-bold transition-colors"
+                >01</span
+              >
+            </div>
+            <div class="flex flex-col gap-2 mt-2">
+              <h3 class="text-xl font-bold text-white">
+                Custom Robotics Systems
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed font-body">
+                Industrial arms, AMRs, and distinct automation mechanisms
+                tailored to your specific facility constraints and payload
+                specs.
+              </p>
+            </div>
+            <!-- Tech Specs -->
+            <div class="mt-auto pt-4 flex flex-wrap gap-2">
+              <span
+                class="px-2 py-1 rounded text-[10px] uppercase font-bold tracking-wide bg-slate-800 text-slate-400 border border-slate-700"
+                >ROS2</span
+              >
+              <span
+                class="px-2 py-1 rounded text-[10px] uppercase font-bold tracking-wide bg-slate-800 text-slate-400 border border-slate-700"
+                >Python</span
+              >
+              <span
+                class="px-2 py-1 rounded text-[10px] uppercase font-bold tracking-wide bg-slate-800 text-slate-400 border border-slate-700"
+                >C++</span
+              >
+            </div>
+          </div>
+          <!-- Card 2: IoT Monitoring -->
+          <div
+            class="group relative flex flex-col gap-4 rounded-xl border border-border-dark bg-surface-dark p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(43,124,238,0.15)] hover:-translate-y-1"
+          >
+            <div class="flex items-start justify-between">
+              <div
+                class="p-3 rounded-lg bg-background-dark border border-border-dark group-hover:border-primary/30 group-hover:bg-primary/10 transition-colors"
+              >
+                <span class="material-symbols-outlined text-primary text-3xl"
+                  >hub</span
+                >
+              </div>
+              <span
+                class="text-border-dark group-hover:text-primary/40 font-mono text-sm font-bold transition-colors"
+                >02</span
+              >
+            </div>
+            <div class="flex flex-col gap-2 mt-2">
+              <h3 class="text-xl font-bold text-white">
+                IoT Monitoring &amp; Automation
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed font-body">
+                Remote dashboards, MQTT setups, and real-time data pipelines
+                designed to give you complete visibility over your industrial
+                assets.
+              </p>
+            </div>
+            <div class="mt-auto pt-4 flex flex-wrap gap-2">
+              <span
+                class="px-2 py-1 rounded text-[10px] uppercase font-bold tracking-wide bg-slate-800 text-slate-400 border border-slate-700"
+                >MQTT</span
+              >
+              <span
+                class="px-2 py-1 rounded text-[10px] uppercase font-bold tracking-wide bg-slate-800 text-slate-400 border border-slate-700"
+                >Grafana</span
+              >
+              <span
+                class="px-2 py-1 rounded text-[10px] uppercase font-bold tracking-wide bg-slate-800 text-slate-400 border border-slate-700"
+                >AWS IoT</span
+              >
+            </div>
+          </div>
+          <!-- Card 3: Prototypes -->
+          <div
+            class="group relative flex flex-col gap-4 rounded-xl border border-border-dark bg-surface-dark p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(43,124,238,0.15)] hover:-translate-y-1"
+          >
+            <div class="flex items-start justify-between">
+              <div
+                class="p-3 rounded-lg bg-background-dark border border-border-dark group-hover:border-primary/30 group-hover:bg-primary/10 transition-colors"
+              >
+                <span class="material-symbols-outlined text-primary text-3xl"
+                  >developer_board</span
+                >
+              </div>
+              <span
+                class="text-border-dark group-hover:text-primary/40 font-mono text-sm font-bold transition-colors"
+                >03</span
+              >
+            </div>
+            <div class="flex flex-col gap-2 mt-2">
+              <h3 class="text-xl font-bold text-white">
+                ESP32 / Raspberry Pi Prototypes
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed font-body">
+                Rapid firmware development and custom PCB design to move your
+                concept from breadboard to field-testable enclosure in weeks.
+              </p>
+            </div>
+            <div class="mt-auto pt-4 flex flex-wrap gap-2">
+              <span
+                class="px-2 py-1 rounded text-[10px] uppercase font-bold tracking-wide bg-slate-800 text-slate-400 border border-slate-700"
+                >Embedded C</span
+              >
+              <span
+                class="px-2 py-1 rounded text-[10px] uppercase font-bold tracking-wide bg-slate-800 text-slate-400 border border-slate-700"
+                >KiCad</span
+              >
+            </div>
+          </div>
+          <!-- Card 4: Sensor-Based Control -->
+          <div
+            class="group relative flex flex-col gap-4 rounded-xl border border-border-dark bg-surface-dark p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(43,124,238,0.15)] hover:-translate-y-1"
+          >
+            <div class="flex items-start justify-between">
+              <div
+                class="p-3 rounded-lg bg-background-dark border border-border-dark group-hover:border-primary/30 group-hover:bg-primary/10 transition-colors"
+              >
+                <span class="material-symbols-outlined text-primary text-3xl"
+                  >sensors</span
+                >
+              </div>
+              <span
+                class="text-border-dark group-hover:text-primary/40 font-mono text-sm font-bold transition-colors"
+                >04</span
+              >
+            </div>
+            <div class="flex flex-col gap-2 mt-2">
+              <h3 class="text-xl font-bold text-white">
+                Sensor-Based Control Systems
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed font-body">
+                Advanced PID loops, environmental sensing, and feedback logic to
+                ensure your machinery reacts instantly to changing conditions.
+              </p>
+            </div>
+            <div class="mt-auto pt-4 flex flex-wrap gap-2">
+              <span
+                class="px-2 py-1 rounded text-[10px] uppercase font-bold tracking-wide bg-slate-800 text-slate-400 border border-slate-700"
+                >PID</span
+              >
+              <span
+                class="px-2 py-1 rounded text-[10px] uppercase font-bold tracking-wide bg-slate-800 text-slate-400 border border-slate-700"
+                >LiDAR</span
+              >
+              <span
+                class="px-2 py-1 rounded text-[10px] uppercase font-bold tracking-wide bg-slate-800 text-slate-400 border border-slate-700"
+                >IMU</span
+              >
+            </div>
+          </div>
+          <!-- Card 5: MVPs -->
+          <div
+            class="group relative flex flex-col gap-4 rounded-xl border border-border-dark bg-surface-dark p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(43,124,238,0.15)] hover:-translate-y-1 lg:col-span-2"
+          >
+            <div class="flex items-start justify-between">
+              <div
+                class="p-3 rounded-lg bg-background-dark border border-border-dark group-hover:border-primary/30 group-hover:bg-primary/10 transition-colors"
+              >
+                <span class="material-symbols-outlined text-primary text-3xl"
+                  >rocket_launch</span
+                >
+              </div>
+              <span
+                class="text-border-dark group-hover:text-primary/40 font-mono text-sm font-bold transition-colors"
+                >05</span
+              >
+            </div>
+            <div class="flex flex-col gap-2 mt-2">
+              <h3 class="text-xl font-bold text-white">
+                MVPs for Startups &amp; Research Teams
+              </h3>
+              <p
+                class="text-slate-400 text-sm leading-relaxed font-body max-w-xl"
+              >
+                We specialize in "Proof of Concept" velocity. Get from idea to
+                functional hardware demonstration in record time to secure
+                funding or publish research.
+              </p>
+            </div>
+            <div class="mt-auto pt-4 flex flex-wrap gap-2">
+              <span
+                class="px-2 py-1 rounded text-[10px] uppercase font-bold tracking-wide bg-slate-800 text-slate-400 border border-slate-700"
+                >Agile Hardware</span
+              >
+              <span
+                class="px-2 py-1 rounded text-[10px] uppercase font-bold tracking-wide bg-slate-800 text-slate-400 border border-slate-700"
+                >3D Printing</span
+              >
+              <span
+                class="px-2 py-1 rounded text-[10px] uppercase font-bold tracking-wide bg-slate-800 text-slate-400 border border-slate-700"
+                >Rapid Assembly</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Technical Divider -->
+    <div
+      class="w-full h-px bg-gradient-to-r from-transparent via-border-dark to-transparent opacity-50"
+    ></div>
+    <!-- CTA Section -->
+    <section
+      class="py-20 px-4 md:px-10 lg:px-40 flex justify-center bg-background-light dark:bg-background-dark"
+    >
+      <div
+        class="w-full max-w-[960px] rounded-2xl bg-gradient-to-b from-[#192433] to-[#101822] border border-border-dark p-8 md:p-16 text-center relative overflow-hidden group"
+      >
+        <!-- Background glow effect -->
+        <div
+          class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 mix-blend-overlay"
+        ></div>
+        <div
+          class="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50 shadow-[0_0_20px_rgba(43,124,238,0.5)]"
+        ></div>
+        <div class="relative z-10 flex flex-col items-center gap-6">
+          <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight">
+            Ready to engineer your solution?
+          </h2>
+          <p class="text-slate-400 text-lg font-body max-w-2xl mx-auto">
+            Let's turn your technical requirements into a functional reality.
+            Our team is ready to review your schematics.
+          </p>
+          <div
+            class="flex flex-col sm:flex-row gap-4 mt-4 w-full justify-center"
+          >
+            <button
+              class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-blue-600 transition-colors text-white text-base font-bold tracking-wide shadow-lg shadow-blue-900/20"
+            >
+              Start a Project
+            </button>
+            <button
+              class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-transparent border border-border-dark hover:border-primary text-white hover:text-primary transition-colors text-base font-bold tracking-wide"
+            >
+              View Schematics
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="border-t border-border-dark bg-[#0b1118]">
+      <div
+        class="px-4 md:px-10 lg:px-40 py-12 flex flex-col gap-8 max-w-7xl mx-auto"
+      >
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-6"
+        >
+          <div class="flex items-center gap-3">
+            <div class="size-6 text-slate-500">
+              <svg
+                class="w-full h-full"
+                fill="none"
+                viewbox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                ></path>
+                <path
+                  clip-rule="evenodd"
+                  d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <span class="text-slate-500 font-bold text-lg"
+              >RoboTech Engineering</span
+            >
+          </div>
+          <div class="flex gap-6">
+            <a
+              class="text-slate-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-2xl">call_split</span>
+            </a>
+            <a
+              class="text-slate-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-2xl">terminal</span>
+            </a>
+            <a
+              class="text-slate-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-2xl"
+                >alternate_email</span
+              >
+            </a>
+          </div>
+        </div>
+        <div class="h-px w-full bg-border-dark opacity-30"></div>
+        <div
+          class="flex flex-col md:flex-row justify-between items-center text-sm text-slate-600 font-body"
+        >
+          <p>© 2024 RoboTech Engineering. All systems operational.</p>
+          <div class="flex gap-6 mt-4 md:mt-0">
+            <a class="hover:text-slate-400" href="#">Privacy Policy</a>
+            <a class="hover:text-slate-400" href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Our Process - Robotics &amp; IoT</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2b7cee",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+              "surface-dark": "#1a2432",
+            },
+            fontFamily: {
+              display: ["Space Grotesk", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            backgroundImage: {
+              "circuit-pattern":
+                "radial-gradient(circle at 2px 2px, rgba(43, 124, 238, 0.15) 1px, transparent 0)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Custom scrollbar for a more technical feel if needed */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #101822;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #2b7cee;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #1e5bbd;
+      }
+
+      /* Glow effect for timeline nodes */
+      .node-glow {
+        box-shadow: 0 0 15px -3px rgba(43, 124, 238, 0.5);
+      }
+    </style>
+  </head>
+  <body class="font-display antialiased">
+    <div
+      class="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden transition-colors duration-300"
+    >
+      <!-- Ambient Background Effect -->
+      <div
+        class="absolute inset-0 z-0 bg-circuit-pattern [background-size:24px_24px] opacity-20 pointer-events-none"
+      ></div>
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 blur-[100px] rounded-full pointer-events-none"
+      ></div>
+      <div class="layout-container flex h-full grow flex-col relative z-10">
+        <!-- Header Section -->
+        <header class="flex w-full flex-col items-center pt-20 pb-10 px-4">
+          <div
+            class="layout-content-container flex flex-col max-w-[960px] w-full items-center text-center"
+          >
+            <div
+              class="inline-flex items-center justify-center px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6"
+            >
+              <span
+                class="text-primary text-xs font-bold tracking-widest uppercase"
+                >Workflow</span
+              >
+            </div>
+            <h2
+              class="text-slate-900 dark:text-white text-4xl md:text-5xl font-bold leading-tight tracking-[-0.02em] pb-4"
+            >
+              Our Process
+            </h2>
+            <h3
+              class="text-primary tracking-tight text-xl md:text-2xl font-medium leading-tight opacity-90"
+            >
+              Simple. Professional. No bullshit.
+            </h3>
+          </div>
+        </header>
+        <!-- Timeline Section -->
+        <main class="flex flex-1 justify-center py-5 px-4 md:px-10">
+          <div
+            class="layout-content-container flex flex-col max-w-[800px] w-full"
+          >
+            <!-- Timeline Grid -->
+            <div class="grid grid-cols-[60px_1fr] gap-x-4 md:gap-x-8">
+              <!-- Step 01 -->
+              <div class="flex flex-col items-center gap-1 pt-2">
+                <div
+                  class="relative flex items-center justify-center w-12 h-12 rounded-full bg-surface-dark border border-primary/30 text-primary node-glow z-10"
+                >
+                  <span class="material-symbols-outlined text-[24px]"
+                    >forum</span
+                  >
+                </div>
+                <div
+                  class="w-[2px] bg-gradient-to-b from-primary via-primary/50 to-primary/20 h-full grow min-h-[80px]"
+                ></div>
+              </div>
+              <div class="flex flex-1 flex-col py-2 pb-12 group">
+                <div class="flex items-baseline justify-between mb-2">
+                  <h4
+                    class="text-slate-900 dark:text-white text-xl font-bold leading-normal group-hover:text-primary transition-colors duration-300"
+                  >
+                    Requirement Discussion
+                  </h4>
+                  <span
+                    class="text-slate-400 dark:text-slate-600 text-lg font-mono font-bold opacity-50"
+                    >01</span
+                  >
+                </div>
+                <p
+                  class="text-slate-600 dark:text-slate-400 text-base font-normal leading-relaxed max-w-xl"
+                >
+                  We start by listening. We define the problem scope, analyze
+                  technical feasibility, and align on clear objectives before a
+                  single line of code is written.
+                </p>
+              </div>
+              <!-- Step 02 -->
+              <div class="flex flex-col items-center gap-1">
+                <div
+                  class="w-[2px] bg-gradient-to-b from-primary/20 via-primary/50 to-primary/20 h-8"
+                ></div>
+                <div
+                  class="relative flex items-center justify-center w-12 h-12 rounded-full bg-surface-dark border border-primary/30 text-primary node-glow z-10"
+                >
+                  <span class="material-symbols-outlined text-[24px]"
+                    >architecture</span
+                  >
+                </div>
+                <div
+                  class="w-[2px] bg-gradient-to-b from-primary/20 via-primary/50 to-primary/20 h-full grow min-h-[80px]"
+                ></div>
+              </div>
+              <div class="flex flex-1 flex-col py-2 pb-12 group">
+                <div class="flex items-baseline justify-between mb-2">
+                  <h4
+                    class="text-slate-900 dark:text-white text-xl font-bold leading-normal group-hover:text-primary transition-colors duration-300"
+                  >
+                    System Design &amp; Architecture
+                  </h4>
+                  <span
+                    class="text-slate-400 dark:text-slate-600 text-lg font-mono font-bold opacity-50"
+                    >02</span
+                  >
+                </div>
+                <p
+                  class="text-slate-600 dark:text-slate-400 text-base font-normal leading-relaxed max-w-xl"
+                >
+                  Blueprints for scalability. We select the optimal hardware
+                  stack, design robust firmware architecture, and map out cloud
+                  connectivity protocols.
+                </p>
+              </div>
+              <!-- Step 03 -->
+              <div class="flex flex-col items-center gap-1">
+                <div
+                  class="w-[2px] bg-gradient-to-b from-primary/20 via-primary/50 to-primary/20 h-8"
+                ></div>
+                <div
+                  class="relative flex items-center justify-center w-12 h-12 rounded-full bg-surface-dark border border-primary/30 text-primary node-glow z-10"
+                >
+                  <span class="material-symbols-outlined text-[24px]"
+                    >memory</span
+                  >
+                </div>
+                <div
+                  class="w-[2px] bg-gradient-to-b from-primary/20 via-primary/50 to-primary/20 h-full grow min-h-[80px]"
+                ></div>
+              </div>
+              <div class="flex flex-1 flex-col py-2 pb-12 group">
+                <div class="flex items-baseline justify-between mb-2">
+                  <h4
+                    class="text-slate-900 dark:text-white text-xl font-bold leading-normal group-hover:text-primary transition-colors duration-300"
+                  >
+                    Prototype Development
+                  </h4>
+                  <span
+                    class="text-slate-400 dark:text-slate-600 text-lg font-mono font-bold opacity-50"
+                    >03</span
+                  >
+                </div>
+                <p
+                  class="text-slate-600 dark:text-slate-400 text-base font-normal leading-relaxed max-w-xl"
+                >
+                  Rapid fabrication. We build functional MVPs using
+                  industrial-grade components to validate the core engineering
+                  assumptions in the real world.
+                </p>
+              </div>
+              <!-- Step 04 -->
+              <div class="flex flex-col items-center gap-1">
+                <div
+                  class="w-[2px] bg-gradient-to-b from-primary/20 via-primary/50 to-primary/20 h-8"
+                ></div>
+                <div
+                  class="relative flex items-center justify-center w-12 h-12 rounded-full bg-surface-dark border border-primary/30 text-primary node-glow z-10"
+                >
+                  <span class="material-symbols-outlined text-[24px]"
+                    >precision_manufacturing</span
+                  >
+                </div>
+                <div
+                  class="w-[2px] bg-gradient-to-b from-primary/20 via-primary/50 to-primary/20 h-full grow min-h-[80px]"
+                ></div>
+              </div>
+              <div class="flex flex-1 flex-col py-2 pb-12 group">
+                <div class="flex items-baseline justify-between mb-2">
+                  <h4
+                    class="text-slate-900 dark:text-white text-xl font-bold leading-normal group-hover:text-primary transition-colors duration-300"
+                  >
+                    Testing &amp; Iteration
+                  </h4>
+                  <span
+                    class="text-slate-400 dark:text-slate-600 text-lg font-mono font-bold opacity-50"
+                    >04</span
+                  >
+                </div>
+                <p
+                  class="text-slate-600 dark:text-slate-400 text-base font-normal leading-relaxed max-w-xl"
+                >
+                  Stress testing and refinement. We simulate edge cases,
+                  optimize power consumption, and refine the code to ensure
+                  reliability in harsh environments.
+                </p>
+              </div>
+              <!-- Step 05 -->
+              <div class="flex flex-col items-center gap-1 pb-3">
+                <div
+                  class="w-[2px] bg-gradient-to-b from-primary/20 via-primary/50 to-primary h-8"
+                ></div>
+                <div
+                  class="relative flex items-center justify-center w-12 h-12 rounded-full bg-surface-dark border border-primary/30 text-primary node-glow z-10"
+                >
+                  <span class="material-symbols-outlined text-[24px]"
+                    >rocket_launch</span
+                  >
+                </div>
+              </div>
+              <div class="flex flex-1 flex-col py-2 group">
+                <div class="flex items-baseline justify-between mb-2">
+                  <h4
+                    class="text-slate-900 dark:text-white text-xl font-bold leading-normal group-hover:text-primary transition-colors duration-300"
+                  >
+                    Delivery &amp; Support
+                  </h4>
+                  <span
+                    class="text-slate-400 dark:text-slate-600 text-lg font-mono font-bold opacity-50"
+                    >05</span
+                  >
+                </div>
+                <p
+                  class="text-slate-600 dark:text-slate-400 text-base font-normal leading-relaxed max-w-xl"
+                >
+                  Final deployment and handover. We provide comprehensive
+                  documentation, source code transfer, and ongoing maintenance
+                  support.
+                </p>
+              </div>
+            </div>
+          </div>
+        </main>
+        <!-- CTA Section -->
+        <section class="w-full mt-10 mb-20">
+          <div class="px-4 md:px-40 flex flex-1 justify-center py-5">
+            <div
+              class="layout-content-container flex flex-col max-w-[960px] flex-1 bg-surface-dark rounded-xl border border-white/5 overflow-hidden relative"
+            >
+              <!-- Decorative gradient for CTA -->
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent pointer-events-none"
+              ></div>
+              <div class="@container relative z-10">
+                <div
+                  class="flex flex-col items-center justify-center gap-6 px-4 py-16 text-center"
+                >
+                  <div class="flex flex-col gap-3 max-w-[720px]">
+                    <h1
+                      class="text-slate-900 dark:text-white tracking-tight text-3xl md:text-4xl font-bold leading-tight"
+                    >
+                      Ready to build the future?
+                    </h1>
+                    <p
+                      class="text-slate-600 dark:text-slate-400 text-lg font-normal leading-normal"
+                    >
+                      Let's turn your concept into an engineered reality.
+                    </p>
+                  </div>
+                  <div class="flex justify-center pt-4">
+                    <button
+                      class="flex min-w-[160px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary hover:bg-blue-600 text-white text-base font-bold leading-normal tracking-[0.015em] transition-all duration-200 shadow-lg shadow-primary/20 hover:shadow-primary/40"
+                    >
+                      <span class="truncate">Start Your Project</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

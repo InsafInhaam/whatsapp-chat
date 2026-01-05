@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Free SEO Auditor Tool</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&amp;family=Space+Grotesk:wght@300..700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0ea5e9", // Sky 500
+              "primary-dark": "#0284c7", // Sky 600
+              "background-light": "#f8fafc", // Slate 50
+              surface: "#ffffff",
+              "surface-highlight": "#f1f5f9", // Slate 100
+              "border-light": "#e2e8f0", // Slate 200
+              "text-main": "#0f172a", // Slate 900
+              "text-muted": "#64748b", // Slate 500
+            },
+            fontFamily: {
+              display: ["Space Grotesk", "sans-serif"],
+              body: ["Noto Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background-light text-text-main font-body overflow-x-hidden antialiased selection:bg-primary/20 selection:text-primary-dark"
+  >
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col group/design-root"
+    >
+      <header
+        class="sticky top-0 z-40 w-full border-b border-border-light bg-white/90 backdrop-blur-md px-6 py-3 lg:px-10"
+      >
+        <div class="mx-auto flex h-14 max-w-7xl items-center justify-between">
+          <div class="flex items-center gap-4">
+            <div
+              class="size-8 text-white flex items-center justify-center rounded-lg bg-primary shadow-lg shadow-primary/20"
+            >
+              <span class="material-symbols-outlined" style="font-size: 24px"
+                >analytics</span
+              >
+            </div>
+            <h2
+              class="text-text-main text-xl font-display font-bold leading-tight tracking-tight"
+            >
+              SEO Auditor
+            </h2>
+          </div>
+          <div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+            <nav class="flex items-center gap-8">
+              <a
+                class="text-text-muted hover:text-primary text-sm font-medium transition-colors"
+                href="#"
+                >Tools</a
+              >
+              <a
+                class="text-text-muted hover:text-primary text-sm font-medium transition-colors"
+                href="#"
+                >Services</a
+              >
+              <a
+                class="text-text-muted hover:text-primary text-sm font-medium transition-colors"
+                href="#"
+                >Pricing</a
+              >
+            </nav>
+            <button
+              class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary text-white text-sm font-bold shadow-md shadow-primary/20 hover:bg-primary-dark transition-all"
+            >
+              <span class="truncate">Talk to Expert</span>
+            </button>
+          </div>
+          <button class="md:hidden text-text-main">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+        </div>
+      </header>
+      <main class="flex-1">
+        <section
+          class="relative px-4 py-12 md:py-20 lg:px-40 flex justify-center bg-white"
+        >
+          <div
+            class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30 pointer-events-none"
+          ></div>
+          <div class="flex w-full max-w-[960px] flex-col gap-8 relative z-10">
+            <div
+              class="relative overflow-hidden rounded-2xl bg-white border border-border-light p-8 md:p-12 shadow-2xl shadow-slate-200/50"
+            >
+              <div
+                class="absolute inset-0 z-0 opacity-5 bg-cover bg-center grayscale invert"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDPyR2_euD5q58YQyewtGAnZmBOoYA1WhTQNH56bF1ZfaYHyCrs6t7mRIawKagG0IV499wi8Eb-19GRQCE31foMBRaKm4JhDgEKfPzyQ_e3onEuLvJEvhaOydkJkQN33X_KwioeT3a9JzKw4yqZD20v7QU2i1Awv1COmxHBym3UXa65ThVPVvYE5l8Nt1TLFOtojiPbvoc4IJlkXHoSZfil7hbGExj6VIeua63dLTQbxOWvVmai-ZljvOs8RP3aKKZFUHYdR5I9qrX8');
+                "
+              ></div>
+              <div
+                class="relative z-10 flex flex-col items-center gap-6 text-center"
+              >
+                <div
+                  class="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary-dark"
+                >
+                  <span class="relative flex h-2 w-2">
+                    <span
+                      class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"
+                    ></span>
+                    <span
+                      class="relative inline-flex rounded-full h-2 w-2 bg-primary"
+                    ></span>
+                  </span>
+                  Free Analysis
+                </div>
+                <h1
+                  class="font-display text-4xl md:text-5xl font-black leading-tight tracking-tight text-text-main max-w-2xl"
+                >
+                  Why isn't your site ranking #1?
+                </h1>
+                <h2
+                  class="text-text-muted text-lg font-normal leading-relaxed max-w-xl"
+                >
+                  Discover technical errors in seconds. Instant analysis, no
+                  credit card required.
+                </h2>
+                <div class="mt-4 w-full max-w-lg">
+                  <label
+                    class="flex h-14 w-full items-stretch rounded-xl shadow-xl shadow-slate-200/60 overflow-hidden ring-1 ring-slate-200 focus-within:ring-2 focus-within:ring-primary transition-all bg-white"
+                  >
+                    <div
+                      class="flex w-12 items-center justify-center bg-slate-50 text-slate-400 border-r border-slate-100"
+                    >
+                      <span class="material-symbols-outlined">language</span>
+                    </div>
+                    <input
+                      class="flex-1 bg-white px-4 text-base text-text-main placeholder:text-slate-400 focus:outline-none"
+                      placeholder="Enter your website URL (e.g., example.com)"
+                      value="www.yourcompany.com"
+                    />
+                    <button
+                      class="bg-primary px-6 text-sm font-bold text-white hover:bg-primary-dark transition-colors flex items-center gap-2"
+                    >
+                      Analyze <span class="hidden sm:inline">Now</span>
+                    </button>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="px-4 pb-12 lg:px-40 flex justify-center bg-background-light pt-12 border-t border-border-light"
+        >
+          <div class="flex w-full max-w-[960px] flex-col gap-10">
+            <div
+              class="flex flex-col md:flex-row gap-6 p-6 rounded-xl bg-white border border-border-light shadow-sm items-center justify-between"
+            >
+              <div class="flex flex-col gap-2 text-center md:text-left">
+                <h3 class="text-text-main text-lg font-display font-bold">
+                  Overall SEO Health Score
+                </h3>
+                <p class="text-text-muted text-sm">
+                  Based on 24 technical checks performed.
+                </p>
+              </div>
+              <div class="flex-1 w-full max-w-md flex flex-col gap-3">
+                <div class="flex justify-between items-end">
+                  <span class="text-4xl font-bold font-display text-text-main"
+                    >62<span class="text-lg text-slate-400 font-normal"
+                      >/100</span
+                    ></span
+                  >
+                  <span
+                    class="text-orange-500 font-bold text-sm uppercase tracking-wide bg-orange-50 px-2 py-1 rounded"
+                    >Mediocre - Action Required</span
+                  >
+                </div>
+                <div
+                  class="h-3 w-full rounded-full bg-slate-100 overflow-hidden ring-1 ring-slate-200"
+                >
+                  <div
+                    class="h-full rounded-full bg-gradient-to-r from-orange-400 to-primary w-[62%] shadow-[0_0_10px_rgba(14,165,233,0.3)]"
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-4">
+              <div
+                class="flex items-center justify-between pb-2 border-b border-border-light"
+              >
+                <h2 class="text-text-main font-display text-2xl font-bold">
+                  Top 5 Critical Issues Found
+                </h2>
+                <span
+                  class="text-xs font-mono text-slate-500 bg-slate-200/50 px-2 py-1 rounded border border-slate-200"
+                  >SCAN_ID: #839201</span
+                >
+              </div>
+              <div
+                class="group flex flex-col md:flex-row gap-4 bg-white hover:bg-slate-50 transition-colors border border-border-light p-5 rounded-xl justify-between items-start md:items-center shadow-sm hover:shadow-md"
+              >
+                <div class="flex items-start gap-4">
+                  <div
+                    class="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-red-50 text-red-600 ring-1 ring-red-100"
+                  >
+                    <span class="material-symbols-outlined">title</span>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <p class="text-text-main text-base font-bold font-display">
+                      Missing Meta Titles
+                    </p>
+                    <p
+                      class="text-text-muted text-sm font-normal leading-relaxed max-w-xl"
+                    >
+                      Your pages are invisible in search results. Google is
+                      displaying random text snippets instead of your brand
+                      message.
+                      <span
+                        class="block mt-1 text-red-600 font-bold text-xs uppercase tracking-wide"
+                        >Potential Impact: ~30% Traffic Loss</span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <button
+                  class="shrink-0 rounded-lg bg-white border border-border-light px-4 py-2 text-sm font-medium text-slate-700 hover:text-white hover:bg-primary hover:border-primary transition-all whitespace-nowrap w-full md:w-auto shadow-sm"
+                >
+                  Fix This Issue
+                </button>
+              </div>
+              <div
+                class="group flex flex-col md:flex-row gap-4 bg-white hover:bg-slate-50 transition-colors border border-border-light p-5 rounded-xl justify-between items-start md:items-center shadow-sm hover:shadow-md"
+              >
+                <div class="flex items-start gap-4">
+                  <div
+                    class="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-red-50 text-red-600 ring-1 ring-red-100"
+                  >
+                    <span class="material-symbols-outlined">timer_off</span>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <p class="text-text-main text-base font-bold font-display">
+                      Critical Page Load Delay
+                    </p>
+                    <p
+                      class="text-text-muted text-sm font-normal leading-relaxed max-w-xl"
+                    >
+                      Your site takes &gt;3s to load. 53% of mobile users
+                      abandon sites that take longer than 3 seconds.
+                      <span
+                        class="block mt-1 text-red-600 font-bold text-xs uppercase tracking-wide"
+                        >Potential Impact: ~50% Conversion Drop</span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <button
+                  class="shrink-0 rounded-lg bg-white border border-border-light px-4 py-2 text-sm font-medium text-slate-700 hover:text-white hover:bg-primary hover:border-primary transition-all whitespace-nowrap w-full md:w-auto shadow-sm"
+                >
+                  Fix This Issue
+                </button>
+              </div>
+              <div
+                class="group flex flex-col md:flex-row gap-4 bg-white hover:bg-slate-50 transition-colors border border-border-light p-5 rounded-xl justify-between items-start md:items-center shadow-sm hover:shadow-md"
+              >
+                <div class="flex items-start gap-4">
+                  <div
+                    class="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-yellow-50 text-yellow-600 ring-1 ring-yellow-100"
+                  >
+                    <span class="material-symbols-outlined">smartphone</span>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <p class="text-text-main text-base font-bold font-display">
+                      Viewport Configuration Errors
+                    </p>
+                    <p
+                      class="text-text-muted text-sm font-normal leading-relaxed max-w-xl"
+                    >
+                      Your site is not fully optimized for mobile-first
+                      indexing. Google may de-rank your pages on mobile devices.
+                      <span
+                        class="block mt-1 text-yellow-600 font-bold text-xs uppercase tracking-wide"
+                        >Potential Impact: Reduced Mobile Rank</span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <button
+                  class="shrink-0 rounded-lg bg-white border border-border-light px-4 py-2 text-sm font-medium text-slate-700 hover:text-white hover:bg-primary hover:border-primary transition-all whitespace-nowrap w-full md:w-auto shadow-sm"
+                >
+                  Fix This Issue
+                </button>
+              </div>
+              <div
+                class="group flex flex-col md:flex-row gap-4 bg-white hover:bg-slate-50 transition-colors border border-border-light p-5 rounded-xl justify-between items-start md:items-center shadow-sm hover:shadow-md"
+              >
+                <div class="flex items-start gap-4">
+                  <div
+                    class="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-red-50 text-red-600 ring-1 ring-red-100"
+                  >
+                    <span class="material-symbols-outlined">lock_open</span>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <p class="text-text-main text-base font-bold font-display">
+                      Insecure Content (Mixed Content)
+                    </p>
+                    <p
+                      class="text-text-muted text-sm font-normal leading-relaxed max-w-xl"
+                    >
+                      Browsers are warning users your site is "Not Secure". This
+                      destroys user trust immediately upon arrival.
+                      <span
+                        class="block mt-1 text-red-600 font-bold text-xs uppercase tracking-wide"
+                        >Potential Impact: ~80% Trust Loss</span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <button
+                  class="shrink-0 rounded-lg bg-white border border-border-light px-4 py-2 text-sm font-medium text-slate-700 hover:text-white hover:bg-primary hover:border-primary transition-all whitespace-nowrap w-full md:w-auto shadow-sm"
+                >
+                  Fix This Issue
+                </button>
+              </div>
+              <div
+                class="group flex flex-col md:flex-row gap-4 bg-white hover:bg-slate-50 transition-colors border border-border-light p-5 rounded-xl justify-between items-start md:items-center shadow-sm hover:shadow-md"
+              >
+                <div class="flex items-start gap-4">
+                  <div
+                    class="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-yellow-50 text-yellow-600 ring-1 ring-yellow-100"
+                  >
+                    <span class="material-symbols-outlined">format_h1</span>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <p class="text-text-main text-base font-bold font-display">
+                      Multiple or Missing H1 Tags
+                    </p>
+                    <p
+                      class="text-text-muted text-sm font-normal leading-relaxed max-w-xl"
+                    >
+                      Search engines are confused about the main topic of your
+                      page. You are competing against yourself.
+                      <span
+                        class="block mt-1 text-yellow-600 font-bold text-xs uppercase tracking-wide"
+                        >Potential Impact: Keyword Dilution</span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <button
+                  class="shrink-0 rounded-lg bg-white border border-border-light px-4 py-2 text-sm font-medium text-slate-700 hover:text-white hover:bg-primary hover:border-primary transition-all whitespace-nowrap w-full md:w-auto shadow-sm"
+                >
+                  Fix This Issue
+                </button>
+              </div>
+            </div>
+            <div
+              class="relative mt-8 rounded-xl border border-border-light bg-slate-100 overflow-hidden"
+            >
+              <div class="p-6 border-b border-border-light bg-white">
+                <h2
+                  class="text-text-main font-display text-xl font-bold flex items-center gap-2"
+                >
+                  <span class="material-symbols-outlined text-primary"
+                    >verified_user</span
+                  >
+                  Advanced Technical Analysis
+                </h2>
+              </div>
+              <div
+                class="p-6 flex flex-col gap-4 filter blur-sm opacity-50 select-none pointer-events-none bg-slate-50"
+              >
+                <div class="h-16 w-full bg-slate-200 rounded-lg"></div>
+                <div class="h-16 w-full bg-slate-200 rounded-lg"></div>
+                <div class="h-16 w-full bg-slate-200 rounded-lg"></div>
+              </div>
+              <div
+                class="absolute inset-0 z-20 flex flex-col items-center justify-center bg-white/60 backdrop-blur-[2px] p-6 text-center"
+              >
+                <div
+                  class="bg-white p-8 rounded-2xl border border-border-light shadow-2xl max-w-md w-full"
+                >
+                  <div
+                    class="mb-4 mx-auto w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary"
+                  >
+                    <span class="material-symbols-outlined">lock</span>
+                  </div>
+                  <h3
+                    class="text-xl font-bold text-text-main mb-2 font-display"
+                  >
+                    Unlock Full Technical Report
+                  </h3>
+                  <p class="text-text-muted text-sm mb-6">
+                    Get detailed insights on Competitor Analysis, Backlink
+                    profiles, and Deep Content Strategy.
+                  </p>
+                  <form class="flex flex-col gap-3">
+                    <input
+                      class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-text-main focus:border-primary focus:ring-1 focus:ring-primary outline-none text-sm placeholder:text-slate-400"
+                      placeholder="Enter your business email"
+                      type="email"
+                    />
+                    <button
+                      class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 rounded-lg transition-colors flex items-center justify-center gap-2 shadow-lg shadow-primary/20"
+                    >
+                      Send Me The Full Report
+                      <span class="material-symbols-outlined text-sm"
+                        >arrow_forward</span
+                      >
+                    </button>
+                  </form>
+                  <p class="text-xs text-slate-400 mt-4">
+                    We respect your inbox. No spam.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="border-t border-border-light bg-white py-16 px-4 lg:px-40 flex justify-center"
+        >
+          <div class="w-full max-w-[960px] flex flex-col gap-10">
+            <div class="text-center">
+              <h2 class="text-text-main font-display text-3xl font-bold">
+                Stop Guessing. Start Ranking.
+              </h2>
+              <p class="text-text-muted mt-2 text-lg">
+                Don't have time to fix these technical issues? We do.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div
+                class="bg-slate-50 border border-border-light rounded-xl p-6 flex flex-col gap-4 hover:shadow-lg transition-shadow"
+              >
+                <h3
+                  class="text-primary-dark font-bold uppercase tracking-wider text-sm"
+                >
+                  Starter
+                </h3>
+                <div class="text-text-main text-2xl font-bold font-display">
+                  SEO Fixer
+                </div>
+                <p class="text-text-muted text-sm">
+                  Perfect for fixing the technical errors found in this audit.
+                </p>
+                <ul class="text-sm text-slate-600 space-y-2 mt-2 flex-1">
+                  <li class="flex gap-2">
+                    <span class="material-symbols-outlined text-primary text-sm"
+                      >check</span
+                    >
+                    Technical Cleanup
+                  </li>
+                  <li class="flex gap-2">
+                    <span class="material-symbols-outlined text-primary text-sm"
+                      >check</span
+                    >
+                    Meta Tag Optimization
+                  </li>
+                  <li class="flex gap-2">
+                    <span class="material-symbols-outlined text-primary text-sm"
+                      >check</span
+                    >
+                    Google Search Console Setup
+                  </li>
+                </ul>
+                <a
+                  class="mt-4 block text-center rounded-lg border border-primary text-primary-dark py-2 text-sm font-bold hover:bg-primary hover:text-white transition-colors"
+                  href="#"
+                  >Get Custom Quote</a
+                >
+              </div>
+              <div
+                class="relative bg-white border border-primary/40 shadow-xl shadow-primary/10 rounded-xl p-6 flex flex-col gap-4 ring-1 ring-primary/20"
+              >
+                <div
+                  class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-md"
+                >
+                  Most Popular
+                </div>
+                <h3
+                  class="text-primary-dark font-bold uppercase tracking-wider text-sm"
+                >
+                  Growth
+                </h3>
+                <div class="text-text-main text-2xl font-bold font-display">
+                  Traffic Builder
+                </div>
+                <p class="text-text-muted text-sm">
+                  For businesses ready to capture leads and grow organic
+                  traffic.
+                </p>
+                <ul class="text-sm text-slate-600 space-y-2 mt-2 flex-1">
+                  <li class="flex gap-2">
+                    <span class="material-symbols-outlined text-primary text-sm"
+                      >check</span
+                    >
+                    Everything in Starter
+                  </li>
+                  <li class="flex gap-2">
+                    <span class="material-symbols-outlined text-primary text-sm"
+                      >check</span
+                    >
+                    4 Monthly Blog Posts
+                  </li>
+                  <li class="flex gap-2">
+                    <span class="material-symbols-outlined text-primary text-sm"
+                      >check</span
+                    >
+                    Backlink Strategy
+                  </li>
+                </ul>
+                <a
+                  class="mt-4 block text-center rounded-lg bg-primary border border-primary text-white py-2 text-sm font-bold hover:bg-primary-dark transition-colors shadow-lg shadow-primary/20"
+                  href="#"
+                  >View Pricing</a
+                >
+              </div>
+              <div
+                class="bg-slate-50 border border-border-light rounded-xl p-6 flex flex-col gap-4 hover:shadow-lg transition-shadow"
+              >
+                <h3
+                  class="text-primary-dark font-bold uppercase tracking-wider text-sm"
+                >
+                  Dominance
+                </h3>
+                <div class="text-text-main text-2xl font-bold font-display">
+                  Market Leader
+                </div>
+                <p class="text-text-muted text-sm">
+                  Dominate your niche with aggressive content and PR strategies.
+                </p>
+                <ul class="text-sm text-slate-600 space-y-2 mt-2 flex-1">
+                  <li class="flex gap-2">
+                    <span class="material-symbols-outlined text-primary text-sm"
+                      >check</span
+                    >
+                    Dedicated Account Manager
+                  </li>
+                  <li class="flex gap-2">
+                    <span class="material-symbols-outlined text-primary text-sm"
+                      >check</span
+                    >
+                    10+ Monthly Content Pieces
+                  </li>
+                  <li class="flex gap-2">
+                    <span class="material-symbols-outlined text-primary text-sm"
+                      >check</span
+                    >
+                    PR &amp; Media Outreach
+                  </li>
+                </ul>
+                <a
+                  class="mt-4 block text-center rounded-lg border border-border-light bg-white text-text-main py-2 text-sm font-bold hover:border-primary hover:text-primary transition-colors"
+                  href="#"
+                  >Contact Sales</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <div
+        class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2 group/chat"
+      >
+        <div
+          class="mb-2 bg-text-main text-white p-4 rounded-xl rounded-br-none shadow-2xl max-w-[280px] animate-bounce hover:animate-none cursor-pointer border border-text-main"
+        >
+          <p class="text-sm font-medium">
+            We found 5 critical errors on your site. Need an expert to fix them?
+          </p>
+        </div>
+        <button
+          class="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/30 hover:scale-110 transition-transform"
+        >
+          <span class="material-symbols-outlined" style="font-size: 28px"
+            >support_agent</span
+          >
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Robotics &amp; IoT Engineering</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2b7cee",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+            },
+            fontFamily: {
+              display: ["Space Grotesk", "sans-serif"],
+              body: ["Noto Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Custom scrollbar for a more technical feel */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #101822;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #233348;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #2b7cee;
+      }
+    </style>
+  </head>
+  <body
+    class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden font-display text-slate-900 dark:text-white"
+  >
+    <div class="layout-container flex h-full grow flex-col">
+      <!-- TopNavBar -->
+      <div
+        class="sticky top-0 z-50 w-full border-b border-solid border-slate-200 dark:border-[#233348] bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md"
+      >
+        <div class="flex justify-center px-4 md:px-10 lg:px-40">
+          <div
+            class="layout-content-container flex w-full max-w-[960px] flex-col"
+          >
+            <header
+              class="flex items-center justify-between whitespace-nowrap py-4"
+            >
+              <div class="flex items-center gap-3">
+                <div class="flex items-center justify-center text-primary">
+                  <span
+                    class="material-symbols-outlined text-3xl"
+                    style="
+                      font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0,
+                        'opsz' 48;
+                    "
+                    >precision_manufacturing</span
+                  >
+                </div>
+                <h2
+                  class="text-lg font-bold leading-tight tracking-[-0.015em] hidden sm:block"
+                >
+                  Robotics &amp; IoT
+                </h2>
+              </div>
+              <div class="flex items-center gap-8">
+                <nav class="hidden md:flex items-center gap-8">
+                  <a
+                    class="text-sm font-medium leading-normal hover:text-primary transition-colors"
+                    href="#"
+                    >Services</a
+                  >
+                  <a
+                    class="text-sm font-medium leading-normal hover:text-primary transition-colors"
+                    href="#"
+                    >Process</a
+                  >
+                  <a
+                    class="text-sm font-medium leading-normal hover:text-primary transition-colors"
+                    href="#"
+                    >Portfolio</a
+                  >
+                </nav>
+                <button
+                  class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary hover:bg-blue-600 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em] shadow-[0_0_15px_rgba(43,124,238,0.3)]"
+                >
+                  <span class="truncate">Contact</span>
+                </button>
+              </div>
+            </header>
+          </div>
+        </div>
+      </div>
+      <!-- Main Content Wrapper -->
+      <main
+        class="flex flex-1 flex-col items-center px-4 md:px-10 lg:px-40 py-5"
+      >
+        <div
+          class="layout-content-container flex flex-col max-w-[960px] w-full flex-1"
+        >
+          <!-- HeroSection -->
+          <!-- Added a subtle radial gradient background effect for "tech" feel -->
+          <div class="relative w-full rounded-2xl overflow-hidden mb-12">
+            <div
+              class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-background-dark to-background-dark"
+            ></div>
+            <div class="@container">
+              <div
+                class="flex flex-col gap-8 py-12 md:py-20 @[864px]:flex-row items-center"
+              >
+                <!-- Hero Text -->
+                <div class="flex flex-col gap-8 flex-1 @[864px]:pr-8">
+                  <div class="flex flex-col gap-4 text-left">
+                    <div
+                      class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 w-fit border border-primary/20"
+                    >
+                      <span
+                        class="w-2 h-2 rounded-full bg-primary animate-pulse"
+                      ></span>
+                      <span
+                        class="text-xs font-bold tracking-wide text-primary uppercase"
+                        >Now Accepting New Projects</span
+                      >
+                    </div>
+                    <h1
+                      class="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-[-0.033em]"
+                    >
+                      Custom Robotics &amp;
+                      <span class="text-primary">IoT Systems</span> Built for
+                      Real-World Use
+                    </h1>
+                    <h2
+                      class="text-slate-500 dark:text-slate-400 text-lg font-normal leading-relaxed max-w-[600px]"
+                    >
+                      We design, prototype, and deploy intelligent automation
+                      and IoT solutions — from concept to working hardware.
+                    </h2>
+                  </div>
+                  <div class="flex flex-wrap gap-4">
+                    <button
+                      class="flex items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-blue-600 text-white text-base font-bold leading-normal tracking-[0.015em] transition-all hover:shadow-[0_0_20px_rgba(43,124,238,0.4)]"
+                    >
+                      <span class="mr-2">Get a Prototype Built</span>
+                      <span class="material-symbols-outlined text-[20px]"
+                        >arrow_forward</span
+                      >
+                    </button>
+                    <button
+                      class="flex items-center justify-center rounded-lg h-12 px-6 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-base font-bold leading-normal tracking-[0.015em] transition-colors"
+                    >
+                      View Case Studies
+                    </button>
+                  </div>
+                  <!-- Tech Specs / Trust Indicators -->
+                  <div
+                    class="mt-4 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-wrap gap-6 items-center text-slate-500 dark:text-slate-400 text-sm font-medium"
+                  >
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-[18px]"
+                        >memory</span
+                      >
+                      <span>Embedded Systems</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-[18px]"
+                        >settings_ethernet</span
+                      >
+                      <span>IoT Network</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-[18px]"
+                        >smart_toy</span
+                      >
+                      <span>Industrial Automation</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Hero Image -->
+                <div class="w-full flex-1 mt-8 @[864px]:mt-0 relative group">
+                  <div
+                    class="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"
+                  ></div>
+                  <div
+                    class="relative w-full bg-slate-900 aspect-square md:aspect-[4/3] bg-cover bg-center rounded-xl overflow-hidden border border-slate-800 shadow-2xl"
+                    data-alt="Futuristic robotic arm wireframe overlay on a dark technical blueprint background"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBFoXBDFKsNhzYvvY76TiheguL-AJWlcrEJrV2yVSzaZs-78fO_KXH4iIvXJJ44YlJkzEST_M7UFqygzBxR_Rb3hKctuU6IjvxP_9cM6JJWZzqas2nUAFRxW26YhtReVpm_7_6fjHQtg-ljBiJC8_JbkGdxRb1fAwkrUudahT6C-hDodbPsCTMr4G88RvbLzDJW2nDJQ4dxsad0z9Cd-yFk7lFy13EbgHnYphUWhK-R_0udaXDoQD-DfBHnHxULm_7sGqVGibAzIMQ');
+                    "
+                  >
+                    <!-- Overlay gradient to match theme -->
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-background-dark/20 to-transparent"
+                    ></div>
+                    <!-- Floating UI Card mockups inside the image area -->
+                    <div
+                      class="absolute bottom-6 left-6 right-6 bg-background-dark/80 backdrop-blur-md border border-slate-700 rounded-lg p-4 flex items-center justify-between"
+                    >
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary"
+                        >
+                          <span class="material-symbols-outlined"
+                            >analytics</span
+                          >
+                        </div>
+                        <div>
+                          <div
+                            class="text-xs text-slate-400 uppercase tracking-wider"
+                          >
+                            System Status
+                          </div>
+                          <div
+                            class="text-sm font-bold text-white flex items-center gap-2"
+                          >
+                            <span
+                              class="w-2 h-2 rounded-full bg-green-500"
+                            ></span>
+                            Operational
+                          </div>
+                        </div>
+                      </div>
+                      <div class="text-right hidden sm:block">
+                        <div class="text-xs text-slate-400">Uptime</div>
+                        <div class="font-mono text-sm text-primary">99.98%</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Trusted By Section (Tech Stack) -->
+          <div
+            class="w-full py-8 border-y border-slate-200 dark:border-slate-800 mb-16"
+          >
+            <p
+              class="text-center text-slate-500 text-sm font-medium mb-6 uppercase tracking-widest"
+            >
+              Powered by Industry Standards
+            </p>
+            <div
+              class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500"
+            >
+              <!-- Using text representations for tech stack as logos are external images -->
+              <span class="text-xl font-bold flex items-center gap-2"
+                ><span class="material-symbols-outlined">code</span>
+                Python</span
+              >
+              <span class="text-xl font-bold flex items-center gap-2"
+                ><span class="material-symbols-outlined">terminal</span>
+                C++</span
+              >
+              <span class="text-xl font-bold flex items-center gap-2"
+                ><span class="material-symbols-outlined">cloud</span> AWS
+                IoT</span
+              >
+              <span class="text-xl font-bold flex items-center gap-2"
+                ><span class="material-symbols-outlined">developer_board</span>
+                Arduino</span
+              >
+              <span class="text-xl font-bold flex items-center gap-2"
+                ><span class="material-symbols-outlined">memory</span> ARM</span
+              >
+            </div>
+          </div>
+          <!-- Portfolio / Images Section -->
+          <div class="flex flex-col gap-6 mb-20">
+            <div class="flex flex-col gap-2">
+              <h3 class="text-2xl md:text-3xl font-bold">Recent Deployments</h3>
+              <p class="text-slate-500 dark:text-slate-400">
+                Hardware and software solutions currently running in the field.
+              </p>
+            </div>
+            <div class="flex w-full grow @container">
+              <div
+                class="w-full gap-4 grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 h-auto md:h-[500px]"
+              >
+                <!-- Large Featured Item -->
+                <div
+                  class="relative group md:col-span-2 md:row-span-2 rounded-xl overflow-hidden"
+                >
+                  <div
+                    class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-105"
+                    data-alt="Engineer working on a complex drone prototype with exposed wiring and blue lighting"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA7-wy6d5bEcQkRwtd14sFlJYVk9x3YtB1lWlWOv-mAMVTPgp115jaH-mgavazg0-tW_Qe_K4Lu8eF8fVvXAfydIfF-qIfcdSWo5ZC37E8Ghnf3KOf1emf-jXS7oNNeg7ylBhVNfW1xU9EaJYuVtl5pWcscm-61G2vZXllFaLrpmXX9_kQKz-ndXQxIeUsN-6taq8HT1P_Bor8ssX92KgJJ8Fu3AJ-VCWhn3p_zhbKEUD6wVRDD6y3mHsKfHYKX30ZRuLzSElm3Kek');
+                    "
+                  ></div>
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-transparent to-transparent opacity-80"
+                  ></div>
+                  <div class="absolute bottom-0 left-0 p-6 w-full">
+                    <div
+                      class="inline-block px-2 py-1 bg-primary text-xs font-bold rounded mb-2"
+                    >
+                      AEROSPACE
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-1">
+                      Autonomous Drone Navigation
+                    </h4>
+                    <p class="text-sm text-slate-300 line-clamp-2">
+                      Custom flight controller built for obstacle avoidance in
+                      high-interference environments.
+                    </p>
+                  </div>
+                </div>
+                <!-- Secondary Item 1 -->
+                <div
+                  class="relative group rounded-xl overflow-hidden h-64 md:h-auto"
+                >
+                  <div
+                    class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-105"
+                    data-alt="Close up of a 3D printer nozzle creating a prototype part"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAB78TCsEWpRcenckDUn9cpMfcxLJggm5ulNYTqItYwsWltBOxvdR9HfJmkc_bnteFK_b4qdIx-9R_W0R31_KT0walLT42r6xj3Y90hdINjQQtiIOf5-ZhxZ9ogqxkvuFre_EllaIoF_o8OMGQJd7lFaZevuyZXRX-9eU5tdgpMcPlGjamC978HxEljqqqCPN1xD7yWSLeEegP2Id3FjjYm2p1ByF97smWIlvOAT5i_5re-o37TbiHiq4lF0XIiieT_Gs9q8NXEZgw');
+                    "
+                  ></div>
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-transparent to-transparent opacity-80"
+                  ></div>
+                  <div class="absolute bottom-0 left-0 p-4 w-full">
+                    <div
+                      class="inline-block px-2 py-1 bg-primary/20 border border-primary/30 text-primary text-[10px] font-bold rounded mb-1"
+                    >
+                      PROTOTYPING
+                    </div>
+                    <h4 class="text-base font-bold text-white">
+                      Rapid Fabrication
+                    </h4>
+                  </div>
+                </div>
+                <!-- Secondary Item 2 -->
+                <div
+                  class="relative group rounded-xl overflow-hidden h-64 md:h-auto"
+                >
+                  <div
+                    class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-105"
+                    data-alt="Server room with racks of data processing units and blue led lights"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA3B3Jz1_iFaDE-45bE9dxqDOGlJoYaEqsbgT3Cd4Vu9K5GObuXZww5vGRsM6J_zde78WleDZa_QOQa3N1lYgKnuYm5cqHrlz2hrMip6bS-HrAzUBHE1Bzz-V5m0woh5pMd180LC4MlYCe9SIXw4USoIqNDuBTeYZ_Yb6Bl15sbl5j73aS4nC5tFsCBYgJjcKpfouy-WMvkzKZ0ox9lyxNIYHRnC--pMoDaOhnMowM5CCZqu61PiA0PnGkKk45xJIkicJ0_UV-WDjs');
+                    "
+                  ></div>
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-transparent to-transparent opacity-80"
+                  ></div>
+                  <div class="absolute bottom-0 left-0 p-4 w-full">
+                    <div
+                      class="inline-block px-2 py-1 bg-primary/20 border border-primary/30 text-primary text-[10px] font-bold rounded mb-1"
+                    >
+                      DATA CENTERS
+                    </div>
+                    <h4 class="text-base font-bold text-white">
+                      IoT Sensor Grid
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Footer Simple -->
+          <footer
+            class="flex flex-col md:flex-row justify-between items-center py-8 border-t border-slate-200 dark:border-slate-800"
+          >
+            <div class="flex items-center gap-2 mb-4 md:mb-0">
+              <span class="material-symbols-outlined text-primary"
+                >precision_manufacturing</span
+              >
+              <span class="text-sm font-bold text-slate-900 dark:text-white"
+                >Robotics &amp; IoT</span
+              >
+            </div>
+            <div class="text-xs text-slate-500 dark:text-slate-400">
+              © 2023 Robotics Engineering Co. All rights reserved.
+            </div>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
